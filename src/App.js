@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 
 import api from './api/eb-api';
-
 import './App.css';
 
 class App extends PureComponent {
