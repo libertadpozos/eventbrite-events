@@ -1,11 +1,8 @@
 import React, { PureComponent } from 'react';
 
 import api from './api/eb-api';
-import API_KEY from './api/eb-api';
 
 import './App.css';
-
-console.log(API_KEY);
 
 class App extends PureComponent {
   state = {
