@@ -5,31 +5,42 @@ import api from './api/eb-api';
 import './App.css';
 
 class App extends PureComponent {
-  state = {
-    events: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      events: [],
+      isFetching: true,
+    };
+    this.getEvents = this.getEvents.bind(this);
+  }
+
+  componentDidMount() {
+    this.getEvents();
+  }
 
   getEvents = () => {
     api
       .get('events/search/')
-      .then(res => this.setState({ events: res.data.events }));
+      .then(res =>
+        this.setState({ events: res.data.events, isFetching: false }),
+      );
   };
 
   render() {
-    const { events } = this.state;
-    const eventList = events.map(event => (
-      <div key={event.id}>{event.name.text}</div>
-    ));
-
+    const { events, isFetching } = this.state;
     return (
       <div className="App">
-        <button type="button" onClick={this.getEvents.bind(this)}>
-          Get Events
-        </button>
-        <section>
-          <h1>Event List</h1>
-          {eventList}
-        </section>
+        <header> Discover all the events around Madrid</header>
+        {isFetching ? (
+          <p>Loading...</p>
+        ) : (
+          <section>
+            <h1>Event List</h1>
+            {events.map(event => (
+              <div key={event.id}>{event.name.text}</div>
+            ))}
+          </section>
+        )}
       </div>
     );
   }
