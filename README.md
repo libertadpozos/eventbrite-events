@@ -14,6 +14,18 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 4. Para añadir y subir los cambios que realices: git add . / git commit -m 'mensaje' / git push origin 'nombre-de-la-rama'
 
+### Pre-requisitos 📋
+
+_Qué debes tener antes de poder acceder a la aplicación_
+
+1. Necesitarás un API key, la cuál podrás obtener a través del siguiente [enlace](https://www.eventbrite.com/platform/)
+
+2. En la raiz del proyecto, deberás crear un archivo .env, en el cual, deberás escribir lo siguiente:
+```
+REACT_APP_API_KEY = _coloca-aqui-tu-API-key_
+```
+3. Listo! ya tienes acceso al listado de eventos de Eventbrite!
+
 ## Construido con 🛠️
 
 _Este proyecto está creado con [Create React App](https://github.com/facebook/create-react-app)._
@@ -27,13 +39,11 @@ _Usamos [Node 10.16.0 y npm 6.9.0](https://nodejs.org/es/download/)_
 
 ## Autoras ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Irene Fuente** - [ifuenteromero](https://github.com/ifuenteromero))
-* **Irene Gómez** - [irenegf83](https://github.com/irenegf83))
-* **Libertad Pozos** - [libertadpozos](https://github.com/libertadpozos))
-* **Saray Fernández** - [sarayfg](https://github.com/sarayfg))
-* **Clarette Terrasi Díaz** - [cterrasid](https://github.com/cterrasid))
+* **Irene Fuente** - [ifuenteromero](https://github.com/ifuenteromero)
+* **Irene Gómez** - [irenegf83](https://github.com/irenegf83)
+* **Libertad Pozos** - [libertadpozos](https://github.com/libertadpozos)
+* **Saray Fernández** - [sarayfg](https://github.com/sarayfg)
+* **Clarette Terrasi Díaz** - [cterrasid](https://github.com/cterrasid)
 
 ## Licencia 📄
 
@@ -44,5 +54,5 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.
 * A todo el equipo de Eventbrite Madrid, por su valiosa colaboración, especialmente a:
 
 * **Stephanie Pi**
-* **Jean Yves Chanal** - [sevy07](https://github.com/sevy07))
+* **Jean Yves Chanal** - [sevy07](https://github.com/sevy07)
 * **Marta Valls**
