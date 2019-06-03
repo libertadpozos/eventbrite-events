@@ -27,7 +27,7 @@ class App extends PureComponent {
     const { venueId } = this.state;
     const createPromise = idVenue =>
       fetch(
-        `https://www.eventbriteapi.com/v3/venues/${idVenue}/?token=E2Y5WNPQNPDDMIWHMFFZ`
+        `https://www.eventbriteapi.com/v3/venues/${idVenue}/?token=E2Y5WNPQNPDDMIWHMFFZ`,
       ).then(res => res.json());
 
     if (venueId) {
@@ -35,6 +35,7 @@ class App extends PureComponent {
       Promise.all(promises).then(responses => {
         responses.map(event => {
           console.log(event.address.city);
+          return event.address.city;
         });
       });
     }

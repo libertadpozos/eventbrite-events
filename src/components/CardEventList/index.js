@@ -12,7 +12,6 @@ const CardEventList = props => {
       {data.map(event => {
         return (
           <li key={event.id}>
-
             <Link to={`/detail/${event.id}`}>
               <EventCard
                 eventName={event.name.text}
@@ -21,7 +20,6 @@ const CardEventList = props => {
                 // eventPlace={event.description.text}
               />
             </Link>
-
           </li>
         );
       })}
