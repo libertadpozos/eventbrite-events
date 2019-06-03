@@ -4,6 +4,10 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import Purchase from '../Purchase/index';
 
+const createMarkup = html => {
+  return { __html: html };
+};
+
 const DetailEvent = props => {
   const { loading, dataArr } = props;
 
@@ -22,7 +26,10 @@ const DetailEvent = props => {
             <p>Añadir al calendario</p>
           </div>
           <p>lugar</p>
-          <p>{dataArr.description.text}</p>
+          <div
+            className="detail__description"
+            dangerouslySetInnerHTML={createMarkup(dataArr.description.html)}
+          />
           <Purchase
             linkBuy={dataArr.url}
             priceTicket={dataArr}

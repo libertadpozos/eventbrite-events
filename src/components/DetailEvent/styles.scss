@@ -1,3 +1,11 @@
-.borrarestaclase{
-    background-color: #fff;
+@import '../../scss/variables.scss';
+
+.detail__description {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $blueSea;
+    text-align: left;
+    padding: 24px;
+    margin-bottom: 40px;
 }
