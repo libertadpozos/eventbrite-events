@@ -20,12 +20,19 @@ const DetailEvent = props => {
           <Link to="/">
             <p>back</p>
           </Link>
-          <div>
-            <img src={dataArr.logo.url} alt={dataArr.name.text} />
-            <h1>{dataArr.name.text}</h1>
-            <p>Añadir al calendario</p>
+          <img src={dataArr.logo.url} alt={dataArr.name.text} />
+          <div className="event-detail__info-container">
+            <p className="event-detail__date">
+              Aqui van la fecha y la hora del evento cuando logremos
+              encontrarlas
+            </p>
+            <h1 className="event-detail__title">{dataArr.name.text}</h1>
+            <p className="event-detail__calendar">Añadir al calendario</p>
           </div>
           <p>lugar</p>
+          <p className="event-detail__place">
+            Aqui va el lugar del evento cuando logremos encontrarlo
+          </p>
           <div
             className="detail__description"
             dangerouslySetInnerHTML={createMarkup(dataArr.description.html)}
