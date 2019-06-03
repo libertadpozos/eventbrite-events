@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import api from './api/eb-api';
+import api from '../../api/eb-api';
 
-import './App.css';
-import HomePage from './components/HomePage';
-import DetailEvent from './components/DetailEvent';
+import './styles.scss';
+
+import HomePage from '../HomePage';
+import DetailEvent from '../DetailEvent';
 
 class App extends PureComponent {
   constructor(props) {
