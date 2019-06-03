@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DetailEvent = () => {
-  return <div>holi</div>;
+  return <h1 className="detail__title">holi</h1>;
 };
 
 export default DetailEvent;

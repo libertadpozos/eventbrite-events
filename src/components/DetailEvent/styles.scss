@@ -1,3 +1,11 @@
-.borrarestaclase{
-    background-color: #fff;
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
+
+.event-detail {
+
+    &__title {
+        width: 272px;
+        background-color: $freeSalmon;
+        color: $whiteGhost;
+    }
 }

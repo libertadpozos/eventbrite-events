@@ -20,7 +20,6 @@ class App extends PureComponent {
 
   componentDidMount() {
     this.getEvents();
-
   }
 
   getEvents = () => {
@@ -29,7 +28,6 @@ class App extends PureComponent {
       .then(res =>
         this.setState({ events: res.data.events, isFetching: false }),
       );
-
   };
 
   render() {
