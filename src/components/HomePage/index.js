@@ -17,7 +17,7 @@ const HomePage = props => {
         <section>
           <h1>Event List</h1>
           <CardEventList data={dataArr} />
-          <Purchase data={dataArr}/>
+          <Purchase data={dataArr} />
         </section>
       )}
     </Fragment>

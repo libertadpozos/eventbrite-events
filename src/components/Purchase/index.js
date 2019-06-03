@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
-const Purchase = props => {
-  const { data } = props;
-  console.log(data);
+const Purchase = () => {
   return (
     <section className="purchase">
       <Link to="/" className="purchase__btn-buy">
