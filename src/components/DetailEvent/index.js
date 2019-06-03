@@ -25,9 +25,8 @@ const DetailEvent = props => {
 };
 
 DetailEvent.propTypes = {
-  dataArr: PropTypes.arrayOf(PropTypes.object).isRequired,
-  match: PropTypes.objectOf().isRequired,
   loading: PropTypes.bool.isRequired,
+  event: PropTypes.objectOf().isRequired,
 };
 
 export default DetailEvent;

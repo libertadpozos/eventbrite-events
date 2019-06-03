@@ -16,14 +16,14 @@ class App extends PureComponent {
       isFetching: true,
     };
     this.getEvents = this.getEvents.bind(this);
-    this.detailEvent= this.detailEvent.bind(this);
+    this.detailEvent = this.detailEvent.bind(this);
   }
 
   componentDidMount() {
     this.getEvents();
   }
 
-  detailEvent(id){
+  detailEvent(id) {
     const events = this.state.events;
     return events.find(item => item.id === id);
   }
@@ -35,6 +35,11 @@ class App extends PureComponent {
         this.setState({ events: res.data.events, isFetching: false }),
       );
   };
+
+  getDetailEvents(id) {
+    const { events } = this.state;
+    return events.find(event => event.id === id);
+  }
 
   render() {
     const { events, isFetching } = this.state;
