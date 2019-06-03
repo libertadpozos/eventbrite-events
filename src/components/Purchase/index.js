@@ -1,16 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const Purchase = () => {
+const getCoin = coin => {
+  if (coin === 'EUR') {
+    return '€';
+  }
+  return coin;
+};
+
+const Purchase = props => {
+  const { linkBuy, coin } = props;
   return (
     <section className="purchase">
-      <Link to="/" className="purchase__btn-buy">
-        Compra tu entrada - 28,50€ - 100€
-      </Link>
+      <a
+        href={linkBuy}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="purchase__btn-buy"
+      >
+        Compra tu entrada - 00,00{getCoin(coin)}
+      </a>
     </section>
   );
+};
+
+Purchase.propTypes = {
+  linkBuy: PropTypes.string.isRequired,
+  coin: PropTypes.string.isRequired,
 };
 
 export default Purchase;

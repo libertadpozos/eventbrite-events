@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import CardEventList from '../CardEventList';
 import './styles.scss';
-import Purchase from '../Purchase/index';
 
 const HomePage = props => {
   const { dataArr, loading } = props;
@@ -17,7 +16,6 @@ const HomePage = props => {
         <section>
           <h1>Event List</h1>
           <CardEventList data={dataArr} />
-          <Purchase data={dataArr} />
         </section>
       )}
     </Fragment>

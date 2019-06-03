@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import Purchase from '../Purchase/index';
 
 const DetailEvent = props => {
   const { loading, dataArr } = props;
@@ -22,6 +23,11 @@ const DetailEvent = props => {
           </div>
           <p>lugar</p>
           <p>{dataArr.description.text}</p>
+          <Purchase
+            linkBuy={dataArr.url}
+            priceTicket={dataArr}
+            coin={dataArr.currency}
+          />
         </div>
       )}
     </Fragment>
