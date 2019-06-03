@@ -1,6 +1,6 @@
 # Eventbrite event interface
 
-_Event interface using the [Public Eventbrite API](https://www.eventbrite.com/platform/api), which allows filtering by city and type of event_
+_Event interface using the [Public Eventbrite API](https://www.eventbrite.com/platform/api), which allows filtering by city and type of event._
 
 ## Starting 🚀
 
@@ -8,7 +8,7 @@ _These instructions will allow you to obtain a copy of the project on your local
 
 1. Clone the repository: git clone https://github.com/Adalab/fairfax-m4-eventbrite-eventos
 
-2. You can also make the project Fork and in this way, you will copy this repository directly to your GitHub profile.
+2. You can also Fork the project so you'll have it on your GitHub profile.
 
 3. To launch the project and see it in the browser: npm start
 
@@ -16,14 +16,15 @@ _These instructions will allow you to obtain a copy of the project on your local
 
 ### Requirements 📋
 
-_What you must have before you can access the application_
+_To use the application you must have the following:_
 
-1. You will need an API key, which you can obtain through the following [link](https://www.eventbrite.com/platform/)
+1. An API key, which you can obtain through the following [link](https://www.eventbrite.com/platform/)
 
 2. In the root of the project, you must create an .env file, in which, you must write the following:
 ```
 REACT_APP_API_KEY = put-here-your-API-key
 ```
+
 3. It's ready! You already have access to Eventbrite's list of events!
 
 ## Built with 🛠️
@@ -47,12 +48,14 @@ _We use [Node 10.16.0 & npm 6.9.0](https://nodejs.org/es/download/)_
 
 ## License 📄
 
-This project is under the MIT License - see the file [LICENSE.md] (LICENSE.md) for details
+This project is under the MIT License - see the file [LICENSE.md](LICENSE.md) for details
 
 ## Our gratitude 🎁
 
-* To all the Eventbrite Madrid team, for their valuable collaboration and willingness, especially for:
+* To all the [Eventbrite](https://www.eventbrite.com/) Madrid team, for their valuable collaboration and willingness, especially to:
 
 * **Stephanie Pi**
 * **Jean Yves Chanal** - [sevy07](https://github.com/sevy07)
 * **Marta Valls**
+* **Emilio García**
+* **Diego Muñoz**
