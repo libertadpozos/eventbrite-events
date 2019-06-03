@@ -1,3 +1,5 @@
+@import "../../scss/variables.scss";
+
 .card__container {
     margin: 24px auto;
     overflow: hidden;
@@ -17,7 +19,7 @@
     margin-top: 162px;
     margin-bottom: 4px;
     line-height: 22px;
-    color: #6f7287;
+    color: $mediumGrey;
 }
 
 .card__event-name {
@@ -29,7 +31,7 @@
 .card__event-place {
     font-size: 14px;
     line-height: 22px;
-    color: #6f7287;
+    color: $mediumGrey;
     margin-top: 8px;
 }
 
