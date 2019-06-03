@@ -29,6 +29,14 @@ class App extends PureComponent {
       );
   };
 
+  getDate = () => {
+    // eslint-disable-next-line react/destructuring-assignment
+    const utcDate = this.state.events.start.utc;
+    const day = utcDate.getUTCDay();
+    // eslint-disable-next-line no-console
+    console.log(day);
+  };
+
   render() {
     const { events, isFetching } = this.state;
     return (
