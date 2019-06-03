@@ -1,3 +1,26 @@
-.borrarestaclase{
-    background-color: #fff;
+.detail{
+  position:relative;
+}
+.arrow-container{
+  width: 48px;
+  height: 48px;
+  background-color: rgba(30, 10, 60, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left:24px;
+  top: 24px;
+}
+.detail-arrow{
+  text-decoration: none;
+  color:white;
+
+}
+.detail-photo{
+  height: 430px;
+  width:100%;
+  object-fit: cover;
+  object-position: center;
 }

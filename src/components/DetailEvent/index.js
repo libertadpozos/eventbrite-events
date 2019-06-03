@@ -11,12 +11,18 @@ const DetailEvent = props => {
       {loading ? (
         <p>Loading</p>
       ) : (
-        <div>
-          <Link to="/">
-            <p>back</p>
+        <div className="detail">
+          <Link className="detail-arrow" to="/">
+            <div className="arrow-container">
+              <i className="fas fa-arrow-left" />
+            </div>
           </Link>
+          <img
+            className="detail-photo"
+            src={dataArr.logo.original.url}
+            alt={dataArr.name.text}
+          />
           <div>
-            <img src={dataArr.logo.url} alt={dataArr.name.text} />
             <h1>{dataArr.name.text}</h1>
             <p>Añadir al calendario</p>
           </div>
