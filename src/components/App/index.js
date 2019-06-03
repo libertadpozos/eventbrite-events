@@ -16,10 +16,16 @@ class App extends PureComponent {
       isFetching: true,
     };
     this.getEvents = this.getEvents.bind(this);
+    this.detailEvent= this.detailEvent.bind(this);
   }
 
   componentDidMount() {
     this.getEvents();
+  }
+
+  detailEvent(id){
+    const events = this.state.events;
+    return events.find(item => item.id === id);
   }
 
   getEvents = () => {
@@ -46,7 +52,7 @@ class App extends PureComponent {
               <DetailEvent
                 loading={isFetching}
                 match={routerProps.match}
-                dataArr={events}
+                dataArr={this.detailEvent(routerProps.match.params.id)}
               />
             )}
           />

@@ -5,10 +5,7 @@ import PropTypes from 'prop-types';
 
 const DetailEvent = props => {
   const { loading, dataArr, match } = props;
-  const events = dataArr.find(
-    (event, radix) => event.id === parseInt(match.params, radix),
-  );
-  console.log(events);
+  console.log(dataArr);
 
   return (
     <Fragment>
@@ -19,7 +16,7 @@ const DetailEvent = props => {
           <Link to="/">
             <p>back</p>
           </Link>
-          <h1>{events.name.text}</h1>
+          <h1>{dataArr.name.text}</h1>
           <p>lugar</p>
         </div>
       )}
