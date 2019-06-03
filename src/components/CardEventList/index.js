@@ -10,14 +10,16 @@ const CardEventList = props => {
       {data.map(event => {
         return (
           <li key={event.id}>
+
             <Link to={`/detail/${event.id}`}>
               <EventCard
                 eventName={event.name.text}
                 eventImage={event.logo.url}
-                eventDate={event.start.utc}
+                eventDate={event.start.local}
                 // eventPlace={event.description.text}
               />
             </Link>
+
           </li>
         );
       })}
