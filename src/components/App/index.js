@@ -16,6 +16,7 @@ class App extends PureComponent {
       isFetching: true,
     };
     this.getEvents = this.getEvents.bind(this);
+    this.detailEvent = this.detailEvent.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,11 @@ class App extends PureComponent {
       );
   };
 
+  detailEvent(id) {
+    const { events } = this.state;
+    return events.find(event => event.id === id);
+  }
+
   render() {
     const { events, isFetching } = this.state;
 
@@ -41,7 +47,16 @@ class App extends PureComponent {
             path="/"
             render={() => <HomePage dataArr={events} loading={isFetching} />}
           />
-          <Route path="/detail" component={DetailEvent} />
+          <Route
+            path="/detail/:id"
+            render={routerProps => (
+              <DetailEvent
+                loading={isFetching}
+                match={routerProps.match}
+                dataArr={this.detailEvent(routerProps.match.params.id)}
+              />
+            )}
+          />
         </Switch>
       </div>
     );
