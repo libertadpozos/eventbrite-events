@@ -20,7 +20,6 @@ class App extends PureComponent {
 
   componentDidMount() {
     this.getEvents();
-
   }
 
   getEvents = () => {
