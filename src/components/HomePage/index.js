@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import CardEventList from '../CardEventList';
 
 const HomePage = props => {
   const { dataArr, loading } = props;
@@ -11,11 +12,7 @@ const HomePage = props => {
       ) : (
         <section>
           <h1>Event List</h1>
-          {dataArr.map(event => (
-            <div key={event.id}>
-              <p>{event.name.text}</p>
-            </div>
-          ))}
+          <CardEventList data={dataArr} />
         </section>
       )}
     </Fragment>
