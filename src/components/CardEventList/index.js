@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const CardEventList = props => {
   const { data } = props;
@@ -7,8 +8,10 @@ const CardEventList = props => {
     <ul>
       {data.map(event => {
         return (
-          <li key={event.id}>
-            <p>{event.name.text}</p>
+          <li key={event.id} id={event.id}>
+            <Link to={`/detail/${event.id}`}>
+              <p>{event.name.text}</p>
+            </Link>
           </li>
         );
       })}

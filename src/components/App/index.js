@@ -40,7 +40,16 @@ class App extends PureComponent {
             path="/"
             render={() => <HomePage dataArr={events} loading={isFetching} />}
           />
-          <Route path="/detail" component={DetailEvent} />
+          <Route
+            path="/detail/:id"
+            render={routerProps => (
+              <DetailEvent
+                loading={isFetching}
+                match={routerProps.match}
+                dataArr={events}
+              />
+            )}
+          />
         </Switch>
       </div>
     );
