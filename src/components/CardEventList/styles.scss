@@ -1,3 +1,8 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
+
 .event-list__container{
-    list-style: none;
+
+    @include flexContainer(flex, center, center, column);
+    
 }
