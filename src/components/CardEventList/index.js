@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import EventCard from '../EventCard';
 
 const CardEventList = props => {
   const { data } = props;
   return (
-    <ul>
+    <ul className="event-list__container">
       {data.map(event => {
         return (
           <li key={event.id}>
-            <p>{event.name.text}</p>
+            <EventCard
+              eventName={event.name.text}
+              eventImage={event.logo.url}
+              eventDate={event.start.utc}
+              // eventPlace={event.description.text}
+            />
           </li>
         );
       })}
