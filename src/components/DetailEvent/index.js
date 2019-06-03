@@ -4,12 +4,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 const DetailEvent = props => {
-  const { loading, dataArr, match } = props;
-  const events = dataArr.find(
-    (event, radix) => event.id === parseInt(match.params, radix),
-  );
-  console.log(events);
-
+  const { loading, event } = props;
   return (
     <Fragment>
       {loading ? (
@@ -19,7 +14,7 @@ const DetailEvent = props => {
           <Link to="/">
             <p>back</p>
           </Link>
-          <h1>{events.name.text}</h1>
+          <h1>Evento: {event.name.text}</h1>
           <p>lugar</p>
         </div>
       )}
@@ -28,9 +23,8 @@ const DetailEvent = props => {
 };
 
 DetailEvent.propTypes = {
-  dataArr: PropTypes.arrayOf(PropTypes.object).isRequired,
-  match: PropTypes.objectOf().isRequired,
   loading: PropTypes.bool.isRequired,
+  event: PropTypes.objectOf().isRequired,
 };
 
 export default DetailEvent;
