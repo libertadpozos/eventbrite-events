@@ -23,13 +23,26 @@ class App extends PureComponent {
     this.getEvents();
   }
 
+  componentDidUpdate() {
+    const createPromise = (idVenue) => fetch(`https://www.eventbriteapi.com/v3/venues/${idVenue}`)
+    .then(res=> res.json());
+
+    let promises = this.state.venueId.map(item => createPromise(item));
+  
+    Promise.all(promises).then(responses =>{})
+  }
   getEvents = () => {
     api
       .get(`events/search/?location.address=madrid&page=1`)
       .then(res =>
-        this.setState({ events: res.data.events, isFetching: false }),
+        this.setState({ 
+          events: res.data.events, 
+          isFetching: false, 
+          venueId: res.data.events.map(item => item.venue_id)}),
       );
+      
   };
+
 
   detailEvent(id) {
     const { events } = this.state;
