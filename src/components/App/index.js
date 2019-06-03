@@ -23,11 +23,6 @@ class App extends PureComponent {
     this.getEvents();
   }
 
-  detailEvent(id) {
-    const events = this.state.events;
-    return events.find(item => item.id === id);
-  }
-
   getEvents = () => {
     api
       .get('events/search/')
@@ -36,7 +31,7 @@ class App extends PureComponent {
       );
   };
 
-  getDetailEvents(id) {
+  detailEvent(id) {
     const { events } = this.state;
     return events.find(event => event.id === id);
   }

@@ -4,7 +4,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 const DetailEvent = props => {
-  const { loading, dataArr, match } = props;
+  const { loading, dataArr } = props;
   console.log(dataArr);
 
   return (
@@ -16,8 +16,13 @@ const DetailEvent = props => {
           <Link to="/">
             <p>back</p>
           </Link>
-          <h1>{dataArr.name.text}</h1>
+          <div>
+            <img src={dataArr.logo.url} alt={dataArr.name.text} />
+            <h1>{dataArr.name.text}</h1>
+            <p>Añadir al calendario</p>
+          </div>
           <p>lugar</p>
+          <p>{dataArr.description.text}</p>
         </div>
       )}
     </Fragment>
@@ -26,7 +31,7 @@ const DetailEvent = props => {
 
 DetailEvent.propTypes = {
   loading: PropTypes.bool.isRequired,
-  event: PropTypes.objectOf().isRequired,
+  dataArr: PropTypes.objectOf().isRequired,
 };
 
 export default DetailEvent;
