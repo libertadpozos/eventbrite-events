@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventCard from '../EventCard';
+import './styles.scss';
 
 const CardEventList = props => {
   const { data } = props;
