@@ -1,24 +1,24 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const EventCard = () => {
-  // const { eventName, eventImage, eventDate, eventPlace } = props;
+const EventCard = props => {
+  const { eventName, eventImage, eventDate } = props;
 
   return (
     <div className="card__container">
-      {/* <img className="card__image" src={eventImage} alt={eventName} />
+      <img className="card__image" src={eventImage} alt={eventName} />
       <p className="card__event-date">{eventDate}</p>
       <h2 className="card__event-name">{eventName}</h2>
-      <p className="card__event-place">{eventPlace}</p> */}
+      {/* <p className="card__event-place">{eventPlace}</p> */}
     </div>
   );
 };
 
-// EventCard.propTypes = {
-//   eventName: PropTypes.string.isRequired,
-//   eventImage: PropTypes.string.isRequired,
-//   eventDate: PropTypes.string.isRequired,
-//   eventPlace: PropTypes.string.isRequired,
-// };
+EventCard.propTypes = {
+  eventName: PropTypes.string.isRequired,
+  eventImage: PropTypes.string.isRequired,
+  eventDate: PropTypes.string.isRequired,
+  // eventPlace: PropTypes.string.isRequired,
+};
 
 export default EventCard;
