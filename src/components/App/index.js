@@ -1,7 +1,12 @@
 import React, { PureComponent } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import api from './api/eb-api';
-import './App.css';
+import api from '../../api/eb-api';
+
+import './styles.scss';
+
+import HomePage from '../HomePage';
+import DetailEvent from '../DetailEvent';
 
 class App extends PureComponent {
   constructor(props) {
@@ -29,17 +34,14 @@ class App extends PureComponent {
     const { events, isFetching } = this.state;
     return (
       <div className="App">
-        <header> Discover all the events around Madrid</header>
-        {isFetching ? (
-          <p>Loading...</p>
-        ) : (
-          <section>
-            <h1>Event List</h1>
-            {events.map(event => (
-              <div key={event.id}>{event.name.text}</div>
-            ))}
-          </section>
-        )}
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage dataArr={events} loading={isFetching} />}
+          />
+          <Route path="/detail" component={DetailEvent} />
+        </Switch>
       </div>
     );
   }
