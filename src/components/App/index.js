@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 
-import api from './api/eb-api';
+import api from '../../api/eb-api';
 
-import './App.css';
+import './styles.scss';
 
 class App extends PureComponent {
   constructor(props) {
