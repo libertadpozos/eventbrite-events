@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.purchase {
+    min-width: 100%;
+    background-color: $mediumBlue;
+    padding: 24px;
+    @include flexContainer(flex, center, center, row);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @media all and (min-width: $tablet) {
+        @include flexContainer(flex, flex-end, center, row);
+        padding: 27px 100px 29px 0; 
+    }
+    &__btn-buy {
+        background-color: $mediumOrange;
+        border-radius: 4px;
+        color: $lightWhite;
+        padding: 12px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+}
