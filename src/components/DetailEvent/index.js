@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 const DetailEvent = props => {
   const { loading, dataArr } = props;
-  console.log(dataArr);
 
   return (
     <Fragment>
