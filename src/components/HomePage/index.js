@@ -14,7 +14,6 @@ const HomePage = props => {
         <p>Loading...</p>
       ) : (
         <section>
-          <h1>Event List</h1>
           <CardEventList data={dataArr} />
         </section>
       )}

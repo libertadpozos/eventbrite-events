@@ -20,18 +20,21 @@ class App extends PureComponent {
 
   componentDidMount() {
     this.getEvents();
+
   }
 
   getEvents = () => {
     api
-      .get('events/search/')
+      .get(`events/search/?location.address=madrid&page=1`)
       .then(res =>
         this.setState({ events: res.data.events, isFetching: false }),
       );
+
   };
 
   render() {
     const { events, isFetching } = this.state;
+
     return (
       <div className="App">
         <Switch>
