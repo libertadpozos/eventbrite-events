@@ -3,9 +3,17 @@
 
 .event-detail {
 
-    &__title {
+    &__info-container{
         width: 272px;
+        padding: 24px;
         background-color: $freeSalmon;
         color: $whiteGhost;
     }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 900;
+        margin: 24px 0;
+    }
+
 }
