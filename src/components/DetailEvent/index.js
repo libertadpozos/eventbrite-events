@@ -34,7 +34,7 @@ const DetailEvent = props => {
             Aqui va el lugar del evento cuando logremos encontrarlo
           </p>
           <div
-            className="detail__description"
+            className="event-detail__description"
             dangerouslySetInnerHTML={createMarkup(dataArr.description.html)}
           />
           <Purchase

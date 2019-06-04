@@ -1,16 +1,6 @@
 @import '../../scss/variables.scss';
 @import "../../scss/mixins.scss";
 
-.detail__description {
-    font-family: $font-primary;
-    font-size: 16px;
-    line-height: 1.5;
-    color: $blueSea;
-    text-align: left;
-    padding: 24px;
-    margin-bottom: 40px;
-}
-
 .event-detail {
     &__info-container{
         width: 272px;
@@ -63,4 +53,26 @@
         padding: 0 0 24px 24px;
         border-bottom: 1px solid $lightGrey;
     }
+}
+
+.event-detail__description {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $blueSea;
+    text-align: left;
+    padding: 24px;
+    margin-bottom: 40px;
+
+    :after{
+        content: "";
+        width: 100%;
+        height: 30%;
+        display: block;
+        position: absolute; 
+        bottom: 0;
+        left: 0;
+        background-size: 100%;
+        background: linear-gradient(top,$coolGradient 0,$whiteGhost 100%);
+      }
 }
