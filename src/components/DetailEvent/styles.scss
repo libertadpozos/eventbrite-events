@@ -44,7 +44,6 @@
 }
 
 .event-detail {
-
     &__info-container{
         width: 272px;
         padding: 24px;
@@ -89,7 +88,7 @@
             color: $whiteGhost;
             text-decoration: none;
             font-weight: 600;
-            position: absolute;
+            position: fixed;
             bottom: 40px;
             z-index: 9;
         }
@@ -103,5 +102,28 @@
         border-bottom: 1px solid $lightGrey;
     }
 
-}
+    &__description{
+        display: block;
+        width: 272px;
+        height: 100%;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 1.5;
+        color: $blueSea;
+        text-align: left;
+        padding: 0 48px;
+        margin-bottom: 40px;
+    
+        @media all and (min-width: $tablet) {
+            width: 600px; 
+        }
 
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            color: $mediumOrange;
+        }
+    }
+}

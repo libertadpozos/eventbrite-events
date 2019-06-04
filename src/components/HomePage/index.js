@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import CardEventList from '../CardEventList';
 import './styles.scss';
@@ -6,7 +6,7 @@ import './styles.scss';
 const HomePage = props => {
   const { dataArr, loading } = props;
   return (
-    <Fragment>
+    <div className="page__container">
       <header className="page__header">
         <h1 className="page__title">Discover all the events around Madrid</h1>
       </header>
@@ -17,7 +17,7 @@ const HomePage = props => {
           <CardEventList data={dataArr} />
         </section>
       )}
-    </Fragment>
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
-@import "./scss/mixins.scss";
-@import "./scss/variables.scss";
-
+@import './scss/variables.scss';
+@import './scss/mixins.scss';
 
 *, *::before, *::after {
   margin: 0;
@@ -12,5 +11,6 @@
 
 body{
   font-family: $font-primary;
-  @include flexContainer(flex, center, center, column);
+  margin: 0;
+  margin-bottom: 40px;
 }

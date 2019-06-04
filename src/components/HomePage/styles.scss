@@ -2,12 +2,19 @@
 @import "../../scss/variables.scss";
 
 .page {
+    &__container{
+        @include flexContainer(flex, center, center, column);
+    }
 
     &__header{
         @include flexContainer(flex, flex-start, flex-start, column);
         width: 272px;
         margin: 24px 123px 0 24px;        
         border-bottom: 1px solid $lightGrey;
+
+        @media all and (min-width: $tablet) {
+            width: 680px;
+        }
     }
 
     &__title{
@@ -17,6 +24,12 @@
         color: $darkBlue;
         text-align: left;
         line-height: 45px;
+
+        @media all and (min-width: $tablet) {
+            font-size: 56px;
+            line-height: 72px;
+            width: unset;
+        }
     }
 }
 

@@ -3,15 +3,32 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const getCoin = coin => {
-  if (coin === 'EUR') {
-    return '€';
+const getPrice = (min, max) => {
+  if (min === max) {
+    if (min === '0.00') {
+      return 'Free';
+    }
+    return `${min}€`;
   }
-  return coin;
+  return `${min}€ - ${max}€`;
 };
 
 const Purchase = props => {
-  const { linkBuy, coin } = props;
+  const { linkBuy, minimunPrice, maximunPrice } = props;
+  if (minimunPrice !== undefined || maximunPrice !== undefined) {
+    return (
+      <section className="purchase">
+        <a
+          href={linkBuy}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="purchase__btn-buy"
+        >
+          Buy your ticket - {getPrice(minimunPrice, maximunPrice)}
+        </a>
+      </section>
+    );
+  }
   return (
     <section className="purchase">
       <a
@@ -20,7 +37,7 @@ const Purchase = props => {
         rel="noopener noreferrer"
         className="purchase__btn-buy"
       >
-        Compra tu entrada - 00,00{getCoin(coin)}
+        Loading...
       </a>
     </section>
   );
@@ -28,7 +45,8 @@ const Purchase = props => {
 
 Purchase.propTypes = {
   linkBuy: PropTypes.string.isRequired,
-  coin: PropTypes.string.isRequired,
+  minimunPrice: PropTypes.string.isRequired,
+  maximunPrice: PropTypes.string.isRequired,
 };
 
 export default Purchase;
