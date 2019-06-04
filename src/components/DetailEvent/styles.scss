@@ -18,7 +18,7 @@
 }
 .detail-arrow {
   text-decoration: none;
-  color: $lightWhite;
+  color: $whiteGhost;
 }
 .detail-photo {
   height: 430px;
@@ -29,7 +29,7 @@
 
 @media all and (min-width: $tablet) {
   .arrow-container {
-    background-color: white;
+    background-color: $whiteGhost;
   }
   .detail-arrow {
     color: #4b4d63;
@@ -39,3 +39,60 @@
     width:544px;
   }
 }
+
+.event-detail {
+
+    &__info-container{
+        width: 272px;
+        padding: 24px;
+        margin: 0 0 24px 24px;
+        background-color: $freeSalmon;
+        color: $whiteGhost;
+        text-align: left;
+
+        @media all and (min-width: $tablet) {
+            width: 600px;
+            padding: 24px 0 0 24px;
+            background-color: $whiteGhost;
+            color: $darkBlue;
+        }      
+    }
+    
+    &__date {
+        font-size: 14px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 900;
+        margin: 24px 0;
+
+        @media all and (min-width: $tablet) {
+            font-size: 56px;
+        }
+    }
+
+    &__calendar {
+        font-size: 16px;
+        text-decoration: underline;
+
+        @media all and (min-width: $tablet) {
+            color: $whiteGhost;
+            text-decoration: none;
+            font-weight: 600;
+            position: absolute;
+            bottom: 40px;
+            z-index: 9;
+        }
+    }
+
+    &__place {
+        font-size: 14px;
+        color: $blueKing;
+        text-align: left;
+        padding: 0 0 24px 24px;
+        border-bottom: 1px solid $lightGrey;
+    }
+
+}
+
