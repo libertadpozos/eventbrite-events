@@ -73,6 +73,9 @@ class DetailEvent extends PureComponent {
               minimunPrice={minPrice.major_value}
               maximunPrice={maxPrice.major_value}
             />
+            <p>
+              {maxPrice.major_value} {minPrice.major_value}
+            </p>
           </div>
         )}
       </Fragment>
