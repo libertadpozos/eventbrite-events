@@ -12,6 +12,10 @@
     padding-left: 24px;
     padding-bottom: 36px;
     box-shadow: 0 4px 12px 0 rgba(46, 55, 77, 0.16);
+
+    @media all and (min-width:1200px) {
+        margin: 15px 10px;
+    }
 }
 
 .card__event-date {
