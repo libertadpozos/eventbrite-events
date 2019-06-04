@@ -63,6 +63,7 @@ class DetailEvent extends PureComponent {
             <p className="event-detail__place">Place</p>
             <div
               className="event-detail__description"
+              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={this.createMarkup(
                 dataArr.description.html,
               )}
