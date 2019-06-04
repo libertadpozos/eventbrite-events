@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import Purchase from '../Purchase/index';
-// import api from '../../api/eb-api';
+import api from '../../api/eb-api';
 
 class DetailEvent extends PureComponent {
   constructor(props) {
@@ -12,8 +12,8 @@ class DetailEvent extends PureComponent {
     const { id } = dataArr;
     this.state = {
       idEvent: id,
-      // maxPrice: {},
-      // minPrice: {},
+      maxPrice: {},
+      minPrice: {},
     };
   }
 
@@ -22,14 +22,14 @@ class DetailEvent extends PureComponent {
     this.getInfoEvent(idEvent);
   }
 
-  // getInfoEvent = id => {
-  //   api.get(`events/${id}/?expand=ticket_availability`).then(res => {
-  // this.setState({
-  //   maxPrice: res.data.ticket_availability.maximum_ticket_price,
-  //   minPrice: res.data.ticket_availability.minimum_ticket_price,
-  // });
-  //   });
-  // };
+  getInfoEvent = id => {
+    api.get(`events/${id}/?expand=ticket_availability`).then(res => {
+      this.setState({
+        maxPrice: res.data.ticket_availability.maximum_ticket_price,
+        minPrice: res.data.ticket_availability.minimum_ticket_price,
+      });
+    });
+  };
 
   createMarkup = html => {
     return { __html: html };
@@ -37,7 +37,7 @@ class DetailEvent extends PureComponent {
 
   render() {
     const { loading, dataArr } = this.props;
-    // const { maxPrice, minPrice } = this.state;
+    const { maxPrice, minPrice } = this.state;
 
     return (
       <Fragment>
@@ -65,6 +65,8 @@ class DetailEvent extends PureComponent {
               linkBuy={dataArr.url}
               priceTicket={dataArr}
               coin={dataArr.currency}
+              max={maxPrice}
+              min={minPrice}
             />
           </div>
         )}
