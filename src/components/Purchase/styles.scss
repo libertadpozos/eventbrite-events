@@ -2,17 +2,32 @@
 @import '../../scss/mixins.scss';
 
 .purchase {
-    min-width: 100%;
+    width: 100%;
+    height: 100px;
     background-color: $darkBlue;
     padding: 24px;
     @include flexContainer(flex, center, center, row);
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
+
+    ::after{
+        content: "";
+        width: 100%;
+        height: 30%;
+        display: block;
+        position: fixed; 
+        bottom: 100px;
+        left: 0;
+        background-size: 100%;
+        background: linear-gradient(top,$coolGradient 0,$whiteGhost 100%);
+      }
+
     @media all and (min-width: $tablet) {
         @include flexContainer(flex, flex-end, center, row);
         padding: 27px 100px 29px 0; 
     }
+
     &__btn-buy {
         background-color: $mediumOrange;
         border-radius: 4px;

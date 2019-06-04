@@ -2,7 +2,6 @@
 @import "../../scss/variables.scss";
 
 .page {
-
     &__header{
         @include flexContainer(flex, flex-start, flex-start, column);
         width: 272px;
