@@ -4,7 +4,7 @@
 .event-list__container{
 
     @include flexContainer(flex, center, center, column);
-    @media all and (min-width:$tablet) {
+    @media all and (min-width:$desktop) {
         display: grid;
         grid-template-columns: 328px 328px;
         grid-template-rows: 1fr 1fr;

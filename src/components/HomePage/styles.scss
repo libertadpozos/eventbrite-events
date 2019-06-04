@@ -31,7 +31,7 @@
 }
 
 .card-list__section {
-    @media all and (min-width:$tablet) {
+    @media all and (min-width:$desktop) {
         display: flex;
         justify-content: flex-end;
     }
