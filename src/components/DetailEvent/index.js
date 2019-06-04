@@ -44,11 +44,17 @@ class DetailEvent extends PureComponent {
         {loading ? (
           <p>Loading</p>
         ) : (
-          <div>
-            <Link to="/">
-              <p>back</p>
+          <div className="detail">
+            <Link className="detail-arrow" to="/">
+              <div className="arrow-container">
+                <i className="fas fa-arrow-left" />
+              </div>
             </Link>
-            <img src={dataArr.logo.url} alt={dataArr.name.text} />
+            <img
+              className="detail-photo"
+              src={dataArr.logo.original.url}
+              alt={dataArr.name.text}
+            />
             <div className="event-detail__info-container">
               <p className="event-detail__date">Fecha</p>
               <h1 className="event-detail__title">{dataArr.name.text}</h1>
@@ -67,6 +73,9 @@ class DetailEvent extends PureComponent {
               minimunPrice={minPrice.major_value}
               maximunPrice={maxPrice.major_value}
             />
+            <p>
+              {maxPrice.major_value} {minPrice.major_value}
+            </p>
           </div>
         )}
       </Fragment>
