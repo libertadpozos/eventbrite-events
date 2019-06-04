@@ -62,7 +62,7 @@ class App extends PureComponent {
           <Route
             exact
             path="/"
-            render={() => <HomePage dataArr={events} loading={isFetching} />}
+            render={() => <HomePage dataArr={events} loading={isFetching} moreResultsClick={this.handleMoreResultsClick}/>}
           />
           <Route
             path="/detail/:id"
@@ -75,7 +75,6 @@ class App extends PureComponent {
             )}
           />
         </Switch>
-        <button className="btn-more" onClick={this.handleMoreResultsClick}></button>
       </div>
     );
   }

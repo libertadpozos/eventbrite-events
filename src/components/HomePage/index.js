@@ -4,7 +4,7 @@ import CardEventList from '../CardEventList';
 import './styles.scss';
 
 const HomePage = props => {
-  const { dataArr, loading } = props;
+  const { dataArr, loading,moreResultsClick } = props;
   return (
     <div className="page__container">
       <header className="page__header">
@@ -14,7 +14,7 @@ const HomePage = props => {
         <p>Loading...</p>
       ) : (
         <section className="card-list__section">
-          <CardEventList data={dataArr} />
+          <CardEventList data={dataArr} moreResultsClick={moreResultsClick}/>
         </section>
       )}
     </div>
