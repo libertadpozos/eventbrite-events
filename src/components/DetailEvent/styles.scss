@@ -53,21 +53,29 @@
         padding: 0 0 24px 24px;
         border-bottom: 1px solid $lightGrey;
     }
-}
 
-.event-detail__description {
-    display: block;
-    width: 272px;
-    height: 100%;
-    font-family: $font-primary;
-    font-size: 16px;
-    line-height: 1.5;
-    color: $blueSea;
-    text-align: left;
-    padding: 0 48px;
-    margin-bottom: 40px;
+    &__description{
+        display: block;
+        width: 272px;
+        height: 100%;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 1.5;
+        color: $blueSea;
+        text-align: left;
+        padding: 0 48px;
+        margin-bottom: 40px;
+    
+        @media all and (min-width: $tablet) {
+            width: 600px; 
+        }
 
-    @media all and (min-width: $tablet) {
-        width: 600px; 
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            color: $mediumOrange;
+        }
     }
 }
