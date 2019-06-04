@@ -10,6 +10,10 @@
     width: 272px;
     margin-top: 24px;
     margin-bottom: 0;
+    @media all and (min-width: $tablet) {
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
     @media all and (min-width: $desktop) {
         width: 100%;
     }
@@ -26,6 +30,10 @@
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.5px;
+    color: $darkBlue;
+    &:hover {
+        color: $blueKing;
+    }
 }
 
 .card__event-place {

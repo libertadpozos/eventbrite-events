@@ -5,9 +5,13 @@
 
     @include flexContainer(flex, center, center, column);
     @media all and (min-width: $tablet) {
-        display: flex;
-        align-items: flex-end;
-        margin-right: 130px;
+    @include mainListMargin;
+        height: 70vh;
+        overflow-y: scroll;
+        margin-bottom: 40px;
+        margin-bottom: 40px;
+        justify-content: flex-start;
+
     }
     @media all and (min-width:$desktop) {
         display: grid;
@@ -16,8 +20,7 @@
         grid-column-gap: 22px;
         grid-row-gap: 30px;
         height: 582px;
-        padding-right: 43px;
-        margin-right: 87px;
+        @include mainListMargin;
         overflow-y: scroll;
     }
 }

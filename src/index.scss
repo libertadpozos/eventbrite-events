@@ -11,9 +11,6 @@
 
 body{
   font-family: $font-primary;
-  @include flexContainer(flex, center, center, column);
+  min-height: 100vh;
 }
 
-#root {
-  width: 100%;
-}
