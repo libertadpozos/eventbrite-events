@@ -20,7 +20,7 @@ const DetailEvent = props => {
           </Link>
           <img
             className="detail-photo"
-            src={dataArr.logo.url}
+            src={dataArr.logo.original.url}
             alt={dataArr.name.text}
           />
           <div className="event-detail__info-container">

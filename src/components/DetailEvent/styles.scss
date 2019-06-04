@@ -7,7 +7,7 @@
 .arrow-container {
   width: 48px;
   height: 48px;
-  background-color: gba(30, 10, 60, 0.2);;
+  background-color: rgba(30, 10, 60, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -21,9 +21,8 @@
   color: $whiteGhost;
 }
 .detail-photo {
-  height: 430px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -36,7 +35,8 @@
   }
   .detail-photo {
     box-shadow: 25px 20px 0px 0px ($darkBlue);
-    width:544px;
+    object-position: top;
+    max-width: 35vw;
   }
 }
 
