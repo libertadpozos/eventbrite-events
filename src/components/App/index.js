@@ -22,10 +22,11 @@ class App extends PureComponent {
   }
 
   componentDidMount() {
-    this.getEvents(this.state.currentPage);
+    const { currentPage } = this.state;
+    this.getEvents(currentPage);
   }
 
-  getEvents = (page) => {
+  getEvents = page => {
     api
       .get(`events/search/?expand=venue&location.address=madrid&page=${page}`)
       .then(res =>
@@ -80,7 +81,7 @@ class App extends PureComponent {
             )}
           />
         </Switch>
-      </div>
+      </div >
     );
   }
 }

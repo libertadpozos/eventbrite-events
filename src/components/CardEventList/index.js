@@ -5,30 +5,32 @@ import EventCard from '../EventCard';
 import './styles.scss';
 
 const CardEventList = props => {
-  const { data, moreResultsClick} = props;
+  const { data } = props;
+  const defaultImage =
+    'https://www.eventbrite.es/static/images/search/placeholder3.png';
   return (
-    <Fragment>
-        <ul className="event-list__container">
-          {data.map(event => {
-            if (event.logo !== null) {
-              return (
-                <li key={event.id}>
-                  <Link to={`/detail/${event.id}`}>
-                    <EventCard
-                      eventName={event.name.text}
-                      eventImage={event.logo.url}
-                      eventDate={event.start.local}
-                      eventPlace={event.venue.name}
-                    />
-                  </Link>
-                </li>
-              );
-            }
-            return <p>loading</p>;
-          })}
-           <button className="results-btn" onClick={moreResultsClick} type="button" >See more results</button>
-        </ul>
-    </Fragment>
+    <ul className="event-list__container">
+      {data.map(event => {
+        let logo;
+        if (event.logo !== null) {
+          logo = event.logo.url;
+        } else {
+          logo = defaultImage;
+        }
+        return (
+          <li key={event.id}>
+            <Link to={`/detail/${event.id}`}>
+              <EventCard
+                eventName={event.name.text}
+                eventImage={logo}
+                eventDate={event.start.local}
+                eventPlace={event.venue.name}
+              />
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 
