@@ -36,5 +36,6 @@
     @media all and (min-width:$tablet) {
         display: flex;
         justify-content: flex-end;
+        align-items: flex-end;
     }
     }

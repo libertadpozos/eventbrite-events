@@ -26,8 +26,8 @@ const CardEventList = props => {
             }
             return <p>loading</p>;
           })}
+           <button className="results-btn" onClick={moreResultsClick} type="button" >See more results</button>
         </ul>
-        <button className="results-btn" onClick={moreResultsClick} type="button" >See more results</button>
     </Fragment>
   );
 };
