@@ -31,10 +31,10 @@ const EventCard = props => {
       className="card__container"
     >
       <div className="img__container" style={{ backgroundImage: `url(${eventImage})` }}></div>
-        <div className="info__container">
-          <p className="card__event-date">{formatedDate}</p>
-          <h2 className="card__event-name">{eventName}</h2>
-          <p className="card__event-place">Madrid</p>
+      <div className="info__container">
+        <p className="card__event-date">{formatedDate}</p>
+        <h2 className="card__event-name">{eventName}</h2>
+        <p className="card__event-place">Madrid</p>
       </div>
     </div>
   );
