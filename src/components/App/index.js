@@ -22,20 +22,18 @@ class App extends PureComponent {
   }
 
   componentDidMount() {
-    this.getEvents(this.state.currentPage);
+    const { currentPage } = this.state;
+    this.getEvents(currentPage);
   }
 
-  getEvents = (page) => {
+  getEvents = page => {
     api
       .get(`events/search/?expand=venue&location.address=madrid&page=${page}`)
       .then(res =>
-        this.setState(prevState => {
-          return {
-            events: res.data.events,
-            isFetching: false,
-          }
-        }
-        ),
+        this.setState({
+          events: res.data.events,
+          isFetching: false,
+        }),
       );
   };
 
@@ -43,14 +41,16 @@ class App extends PureComponent {
     const { events } = this.state;
     return events.find(event => event.id === id);
   }
-  handleMoreResultsClick(event) {
+
+  handleMoreResultsClick() {
+    const { currentPage } = this.state;
     this.setState(prevState => {
       return {
         currentPage: prevState.currentPage + 1,
         isFetching: true,
-      }
-    })
-    this.getEvents(this.state.currentPage);
+      };
+    });
+    this.getEvents(currentPage);
   }
 
   render() {
@@ -75,7 +75,13 @@ class App extends PureComponent {
             )}
           />
         </Switch>
-        <button className="btn-more" onClick={this.handleMoreResultsClick}></button>
+        <button
+          type="button"
+          className="btn-more"
+          onClick={this.handleMoreResultsClick}
+        >
+          More results
+        </button>
       </div>
     );
   }
