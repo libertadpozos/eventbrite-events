@@ -8,16 +8,25 @@
         width: 272px;
         margin: 24px 123px 0 24px;        
         border-bottom: 1px solid $lightGrey;
+
+        @media all and (min-width: $tablet) {
+            width: 680px;
+        }
     }
 
     &__title{
         width: 173px;
         padding-bottom: 24px;
-        font-family: $font-primary;
         font-size: 32px;
         color: $darkBlue;
         text-align: left;
         line-height: 45px;
+
+        @media all and (min-width: $tablet) {
+            font-size: 56px;
+            line-height: 72px;
+            width: unset;
+        }
     }
 }
 

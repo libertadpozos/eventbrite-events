@@ -3,7 +3,7 @@
 
 .purchase {
     min-width: 100%;
-    background-color: $mediumBlue;
+    background-color: $darkBlue;
     padding: 24px;
     @include flexContainer(flex, center, center, row);
     position: absolute;
@@ -16,7 +16,7 @@
     &__btn-buy {
         background-color: $mediumOrange;
         border-radius: 4px;
-        color: $lightWhite;
+        color: $whiteGhost;
         padding: 12px;
         text-align: center;
         text-decoration: none;
