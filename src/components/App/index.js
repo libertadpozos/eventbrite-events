@@ -23,11 +23,6 @@ class App extends PureComponent {
 
   componentDidMount() {
     this.getEvents(this.state.currentPage);
-    console.log('didMOunt');
-  }
-  componentDidUpdate() {
-    console.log('didUpdate');
-    //this.getEvents(this.state.currentPage);
   }
 
   getEvents = (page) => {
@@ -44,12 +39,11 @@ class App extends PureComponent {
       );
   };
 
-
   detailEvent(id) {
     const { events } = this.state;
     return events.find(event => event.id === id);
   }
-  handleMoreResultsClick (event) {
+  handleMoreResultsClick(event) {
     this.setState(prevState => {
       return {
         currentPage: prevState.currentPage + 1,
@@ -61,7 +55,6 @@ class App extends PureComponent {
 
   render() {
     const { events, isFetching } = this.state;
-    console.log('render');
 
     return (
       <div className="App">
@@ -82,7 +75,7 @@ class App extends PureComponent {
             )}
           />
         </Switch>
-        <button className="btn-more" onClick={this.handleMoreResultsClick }></button>
+        <button className="btn-more" onClick={this.handleMoreResultsClick}></button>
       </div>
     );
   }
