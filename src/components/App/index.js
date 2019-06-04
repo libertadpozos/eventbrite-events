@@ -14,33 +14,54 @@ class App extends PureComponent {
     this.state = {
       events: [],
       isFetching: true,
+      currentPage: 1,
     };
     this.getEvents = this.getEvents.bind(this);
     this.detailEvent = this.detailEvent.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    this.getEvents();
+    this.getEvents(this.state.currentPage);
+    console.log('didMOunt');
+  }
+  componentDidUpdate() {
+    console.log('didUpdate');
+    //this.getEvents(this.state.currentPage);
   }
 
-  getEvents = () => {
+  getEvents = (page) => {
     api
-      .get(`events/search/?expand=venue&location.address=madrid&page=1`)
+      .get(`events/search/?expand=venue&location.address=madrid&page=${page}`)
       .then(res =>
-        this.setState({
-          events: res.data.events,
-          isFetching: false,
-        }),
+        this.setState(prevState => {
+          return {
+            events: res.data.events,
+            isFetching: false,
+          }
+          } 
+       ),
       );
   };
+
 
   detailEvent(id) {
     const { events } = this.state;
     return events.find(event => event.id === id);
   }
+  handleClick(event) {
+    this.setState(prevState => {
+      return {
+        currentPage: prevState.currentPage +1,
+        isFetching: true,
+      }
+    })
+     this.getEvents(this.state.currentPage);
+  }
 
   render() {
     const { events, isFetching } = this.state;
+    console.log('render');
 
     return (
       <div className="App">
@@ -61,6 +82,7 @@ class App extends PureComponent {
             )}
           />
         </Switch>
+        <button className="btn-more"onClick={this.handleClick}></button>
       </div>
     );
   }
