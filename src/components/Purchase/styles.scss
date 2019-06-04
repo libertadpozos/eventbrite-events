@@ -11,7 +11,7 @@
     left: 0;
     bottom: 0;
 
-    :after{
+    ::after{
         content: "";
         width: 100%;
         height: 30%;
