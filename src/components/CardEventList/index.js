@@ -6,7 +6,6 @@ import './styles.scss';
 
 const CardEventList = props => {
   const { data } = props;
-  // console.log(data);
   return (
     <ul className="event-list__container">
       {data.map(event => {
@@ -18,7 +17,7 @@ const CardEventList = props => {
                   eventName={event.name.text}
                   eventImage={event.logo.url}
                   eventDate={event.start.local}
-                  // eventPlace={event.description.text}
+                  eventPlace={event.venue.name}
                 />
               </Link>
             </li>
