@@ -15,6 +15,7 @@
   position: fixed;
   left: 24px;
   top: 24px;
+  z-index: 5;
 }
 .detail-arrow {
   text-decoration: none;
@@ -24,6 +25,8 @@
   width: 100%;
   object-fit: contain;
   object-position: center;
+  position:relative;
+  z-index: 0;
 }
 
 @media all and (min-width: $tablet) {
@@ -45,16 +48,22 @@
     &__info-container{
         width: 272px;
         padding: 24px;
-        margin: 0 0 24px 24px;
         background-color: $freeSalmon;
         color: $whiteGhost;
         text-align: left;
+        position: absolute;
+        left:50%;
+        right:50%;
+        transform: translate(-50%, -30%);
+
+        
 
         @media all and (min-width: $tablet) {
             width: 600px;
             padding: 24px 0 0 24px;
             background-color: $whiteGhost;
             color: $darkBlue;
+            position:relative;
         }      
     }
     
