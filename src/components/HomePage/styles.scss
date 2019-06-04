@@ -34,4 +34,49 @@
         display: flex;
         justify-content: flex-end;
     }
+}
+
+.circle {
+    width: 104px;
+    height: 261px;
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    z-index: -10;
+    @media all and (min-width: $tablet) {
+        width: 937px;
+        height: 488px;
+        top: auto;
+        bottom: 0;
+        left: -237px;
     }
+    &--back {
+        height: 176px;
+        width: 176px;
+        border-radius: 50%;
+        background-image: url(../../img/mapa.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @media all and (min-width: $tablet) {
+            height: 679px;
+            width: 679px;
+        }
+    }
+    &--front {
+        height: 184px;
+        width: 184px;
+        border-radius: 50%;
+        background-color: $freeSalmon;
+        position: absolute;
+        top: 77px;
+        left: 51px;
+        @media all and (min-width: $tablet) {
+            height: 812px;
+            width: 812px;
+            top: 310px;
+            left: 193px;
+        }
+    }
+}
