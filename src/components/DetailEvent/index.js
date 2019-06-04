@@ -31,6 +31,10 @@ class DetailEvent extends PureComponent {
     });
   };
 
+  createMarkup = html => {
+    return { __html: html };
+  };
+
   render() {
     const { loading, dataArr } = this.props;
     const { maxPrice, minPrice } = this.state;
@@ -49,16 +53,28 @@ class DetailEvent extends PureComponent {
               <h1>{dataArr.name.text}</h1>
               <p>Añadir al calendario</p>
             </div>
-            <p>lugar</p>
             <p>{dataArr.description.text}</p>
+            <p className="event-detail__place">Place</p>
+            <div
+              className="event-detail__description"
+              dangerouslySetInnerHTML={this.createMarkup(
+                dataArr.description.html,
+              )}
+            >
+              <Purchase
+                linkBuy={dataArr.url}
+                priceTicket={dataArr}
+                coin={dataArr.currency}
+              />
+              <p>
+                {maxPrice.major_value} {minPrice.major_value}
+              </p>
+            </div>
             <Purchase
               linkBuy={dataArr.url}
               priceTicket={dataArr}
               coin={dataArr.currency}
             />
-            <p>
-              {maxPrice.major_value} {minPrice.major_value}
-            </p>
           </div>
         )}
       </Fragment>

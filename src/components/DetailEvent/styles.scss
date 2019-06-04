@@ -1,8 +1,7 @@
+@import '../../scss/variables.scss';
 @import "../../scss/mixins.scss";
-@import "../../scss/variables.scss";
 
 .event-detail {
-
     &__info-container{
         width: 272px;
         padding: 24px;
@@ -41,7 +40,7 @@
             color: $whiteGhost;
             text-decoration: none;
             font-weight: 600;
-            position: absolute;
+            position: fixed;
             bottom: 40px;
             z-index: 9;
         }
@@ -54,5 +53,21 @@
         padding: 0 0 24px 24px;
         border-bottom: 1px solid $lightGrey;
     }
+}
 
+.event-detail__description {
+    display: block;
+    width: 272px;
+    height: 100%;
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $blueSea;
+    text-align: left;
+    padding: 0 48px;
+    margin-bottom: 40px;
+
+    @media all and (min-width: $tablet) {
+        width: 600px; 
+    }
 }
