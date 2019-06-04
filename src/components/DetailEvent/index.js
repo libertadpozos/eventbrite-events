@@ -64,9 +64,8 @@ class DetailEvent extends PureComponent {
             <Purchase
               linkBuy={dataArr.url}
               priceTicket={dataArr}
-              coin={dataArr.currency}
-              max={maxPrice}
-              min={minPrice}
+              minimunPrice={minPrice.major_value}
+              maximunPrice={maxPrice.major_value}
             />
           </div>
         )}
