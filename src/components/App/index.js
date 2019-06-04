@@ -18,7 +18,7 @@ class App extends PureComponent {
     };
     this.getEvents = this.getEvents.bind(this);
     this.detailEvent = this.detailEvent.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleMoreResultsClick = this.handleMoreResultsClick.bind(this);
   }
 
   componentDidMount() {
@@ -39,8 +39,8 @@ class App extends PureComponent {
             events: res.data.events,
             isFetching: false,
           }
-          } 
-       ),
+        }
+        ),
       );
   };
 
@@ -49,14 +49,14 @@ class App extends PureComponent {
     const { events } = this.state;
     return events.find(event => event.id === id);
   }
-  handleClick(event) {
+  handleMoreResultsClick (event) {
     this.setState(prevState => {
       return {
-        currentPage: prevState.currentPage +1,
+        currentPage: prevState.currentPage + 1,
         isFetching: true,
       }
     })
-     this.getEvents(this.state.currentPage);
+    this.getEvents(this.state.currentPage);
   }
 
   render() {
@@ -82,7 +82,7 @@ class App extends PureComponent {
             )}
           />
         </Switch>
-        <button className="btn-more"onClick={this.handleClick}></button>
+        <button className="btn-more" onClick={this.handleMoreResultsClick }></button>
       </div>
     );
   }
