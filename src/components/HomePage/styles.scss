@@ -45,6 +45,13 @@
     right: 0;
     z-index: -10;
     @media all and (min-width: $tablet) {
+        width: 680px;
+        height: 350px;
+        top: auto;
+        bottom: 0;
+        left: -153px;
+    }
+    @media all and (min-width: $desktop) {
         width: 937px;
         height: 488px;
         top: auto;
@@ -60,6 +67,10 @@
         background-position: center;
         background-size: cover;
         @media all and (min-width: $tablet) {
+            height: 479px;
+            width: 479px;
+        }
+        @media all and (min-width: $desktop) {
             height: 679px;
             width: 679px;
         }
@@ -73,6 +84,12 @@
         top: 77px;
         left: 51px;
         @media all and (min-width: $tablet) {
+            height: 612px;
+            width: 612px;
+            top: 225px;
+            left: 115px;
+        }
+        @media all and (min-width: $desktop) {
             height: 812px;
             width: 812px;
             top: 310px;
