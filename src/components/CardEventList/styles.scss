@@ -6,7 +6,7 @@
     @include flexContainer(flex, center, center, column);
     @media all and (min-width: $tablet) {
     @include mainListMargin;
-        height: 70vh;
+        height: 60vh;
         overflow-y: scroll;
         margin-bottom: 40px;
         margin-top: 40px;
