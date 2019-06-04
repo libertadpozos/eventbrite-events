@@ -13,8 +13,7 @@ const HomePage = props => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <section>
-          <h1>Event List</h1>
+        <section className="card-list__section">
           <CardEventList data={dataArr} />
         </section>
       )}

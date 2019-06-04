@@ -23,11 +23,33 @@ class App extends PureComponent {
     this.getEvents();
   }
 
+  // componentDidUpdate() {
+  //   const { venueId } = this.state;
+  //   const createPromise = idVenue =>
+  //     fetch(
+  //       `https://www.eventbriteapi.com/v3/venues/${idVenue}/?token=FIMWFJEI7CK7X43OY5AB`,
+  //     ).then(res => res.json());
+
+  //   if (venueId) {
+  //     const promises = venueId.map(item => createPromise(item));
+  //     Promise.all(promises).then(responses => {
+  //       responses.map(event => {
+
+  //          console.log(event.address.city);
+  //         // return event.address.city;
+  //       });
+  //     });
+  //   }
+  // }
+
   getEvents = () => {
     api
-      .get(`events/search/?location.address=madrid&page=1`)
+      .get(`events/search/?expand=venue&location.address=madrid&page=1`)
       .then(res =>
-        this.setState({ events: res.data.events, isFetching: false }),
+        this.setState({
+          events: res.data.events,
+          isFetching: false,
+        }),
       );
   };
 
