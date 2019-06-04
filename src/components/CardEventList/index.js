@@ -17,7 +17,7 @@ const CardEventList = props => {
                   eventName={event.name.text}
                   eventImage={event.logo.url}
                   eventDate={event.start.local}
-                  // eventPlace={event.description.text}
+                  eventPlace={event.venue.name}
                 />
               </Link>
             </li>

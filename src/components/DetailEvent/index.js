@@ -1,52 +1,86 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import Purchase from '../Purchase/index';
+import api from '../../api/eb-api';
 
-const createMarkup = html => {
-  return { __html: html };
-};
+class DetailEvent extends PureComponent {
+  constructor(props) {
+    super(props);
+    const { dataArr } = this.props;
+    const { id } = dataArr;
+    this.state = {
+      idEvent: id,
+      maxPrice: {},
+      minPrice: {},
+    };
+  }
 
-const DetailEvent = props => {
-  const { loading, dataArr } = props;
+  componentDidMount() {
+    const { idEvent } = this.state;
+    this.getInfoEvent(idEvent);
+  }
 
-  return (
-    <Fragment>
-      {loading ? (
-        <p>Loading</p>
-      ) : (
-        <div>
-          <Link to="/">
-            <p>back</p>
-          </Link>
-          <img src={dataArr.logo.url} alt={dataArr.name.text} />
-          <div className="event-detail__info-container">
-            <p className="event-detail__date">
-              Aqui van la fecha y la hora del evento cuando logremos
-              encontrarlas
-            </p>
-            <h1 className="event-detail__title">{dataArr.name.text}</h1>
-            <p className="event-detail__calendar">Añadir al calendario</p>
+  getInfoEvent = id => {
+    api.get(`events/${id}/?expand=ticket_availability`).then(res => {
+      this.setState({
+        maxPrice: res.data.ticket_availability.maximum_ticket_price,
+        minPrice: res.data.ticket_availability.minimum_ticket_price,
+      });
+    });
+  };
+
+  createMarkup = html => {
+    return { __html: html };
+  };
+
+  render() {
+    const { loading, dataArr } = this.props;
+    const { maxPrice, minPrice } = this.state;
+
+    return (
+      <Fragment>
+        {loading ? (
+          <p>Loading</p>
+        ) : (
+          <div>
+            <Link to="/">
+              <p>back</p>
+            </Link>
+            <div>
+              <img src={dataArr.logo.url} alt={dataArr.name.text} />
+              <h1>{dataArr.name.text}</h1>
+              <p>Añadir al calendario</p>
+            </div>
+            <p>{dataArr.description.text}</p>
+            <p className="event-detail__place">Place</p>
+            <div
+              className="event-detail__description"
+              dangerouslySetInnerHTML={this.createMarkup(
+                dataArr.description.html,
+              )}
+            >
+              <Purchase
+                linkBuy={dataArr.url}
+                priceTicket={dataArr}
+                coin={dataArr.currency}
+              />
+              <p>
+                {maxPrice.major_value} {minPrice.major_value}
+              </p>
+            </div>
+            <Purchase
+              linkBuy={dataArr.url}
+              priceTicket={dataArr}
+              coin={dataArr.currency}
+            />
           </div>
-          <p>lugar</p>
-          <p className="event-detail__place">
-            Aqui va el lugar del evento cuando logremos encontrarlo
-          </p>
-          <div
-            className="event-detail__description"
-            dangerouslySetInnerHTML={createMarkup(dataArr.description.html)}
-          />
-          <Purchase
-            linkBuy={dataArr.url}
-            priceTicket={dataArr}
-            coin={dataArr.currency}
-          />
-        </div>
-      )}
-    </Fragment>
-  );
-};
+        )}
+      </Fragment>
+    );
+  }
+}
 
 DetailEvent.propTypes = {
   loading: PropTypes.bool.isRequired,
