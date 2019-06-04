@@ -1,6 +1,8 @@
 # Eventbrite event interface
 
-_Event interface using the [Public Eventbrite API](https://www.eventbrite.com/platform/api), which allows filtering by city and type of event._
+_Single Page Application for Eventbrite, using React. The app, is about an event interface using the [Public Eventbrite API](https://www.eventbrite.com/platform/api), which allows filtering by city and type of event. Next, the structure of application components:_
+
+![App's components diagram](components.png)
 
 ## Starting 🚀
 
@@ -52,10 +54,14 @@ This project is under the MIT License - see the file [LICENSE.md](LICENSE.md) fo
 
 ## Our gratitude 🎁
 
-* To all the [Eventbrite](https://www.eventbrite.com/) Madrid team, for their valuable collaboration and willingness, especially to:
+_To all the [Eventbrite](https://www.eventbrite.com/) Spain team, for their valuable collaboration and willingness, especially to:_
 
 * **Stephanie Pi**
 * **Jean Yves Chanal** - [sevy07](https://github.com/sevy07)
 * **Marta Valls**
 * **Emilio García**
 * **Diego Muñoz**
+* **Jorge Ferreiro**
+* **Jorge Barata**
+* **Mario Montes**
+* **Marisa**
