@@ -8,5 +8,9 @@
         display: grid;
         grid-template-columns: 328px 328px;
         grid-template-rows: 1fr 1fr;
+        height: 582px;
+        padding-right: 43px;
+        margin-right: 87px;
+        overflow-y: scroll;
     }
 }
