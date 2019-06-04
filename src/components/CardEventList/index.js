@@ -6,7 +6,6 @@ import './styles.scss';
 
 const CardEventList = props => {
   const { data } = props;
-  // console.log(data);
   return (
     <ul className="event-list__container">
       {data.map(event => {
