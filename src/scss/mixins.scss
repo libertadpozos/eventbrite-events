@@ -4,3 +4,8 @@
     align-items: $alignItems;
     flex-direction: $flexDirection;
 }
+
+@mixin mainListMargin {
+    padding-right: 43px;
+    margin-right: 87px;
+}

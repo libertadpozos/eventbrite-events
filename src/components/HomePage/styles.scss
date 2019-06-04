@@ -2,7 +2,6 @@
 @import "../../scss/variables.scss";
 
 .page {
-
     &__header{
         @include flexContainer(flex, flex-start, flex-start, column);
         width: 100%;
@@ -35,5 +34,7 @@
 }
 
 .card-list__section {
-    @include flexContainer(flex, flex-end, unset, unset)
+    @media all and (min-width:$tablet) {
+        @include flexContainer(flex, flex-end, unset, unset)
+        }
 }
