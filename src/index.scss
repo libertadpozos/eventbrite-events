@@ -9,12 +9,13 @@
   text-decoration: none;
 }
 
-html {
-  min-height: 100%;
-  position: relative;
-}
+// html {
+//   height: 100vh;
+//   position: relative;
+// }
 
 body{
+  //@include flexContainer(flex, center, center, column);
   font-family: $font-primary;
   margin: 0;
   margin-bottom: 40px;

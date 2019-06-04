@@ -15,6 +15,7 @@
         @include flexContainer(flex, flex-end, center, row);
         padding: 27px 100px 29px 0; 
     }
+
     &__btn-buy {
         background-color: $mediumOrange;
         border-radius: 4px;

@@ -56,13 +56,15 @@
 }
 
 .event-detail__description {
-    max-width: 272px;
+    display: block;
+    width: 272px;
+    height: 100%;
     font-family: $font-primary;
     font-size: 16px;
     line-height: 1.5;
     color: $blueSea;
     text-align: left;
-    padding: 24px;
+    padding: 0 48px;
     margin-bottom: 40px;
 
     :after{
@@ -78,6 +80,6 @@
       }
 
     @media all and (min-width: $tablet) {
-        max-width: 600px; 
+        width: 600px; 
     }
 }
