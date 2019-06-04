@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.scss';
 
 const EventCard = props => {
   const { eventName, eventImage, eventDate } = props;
@@ -26,11 +27,13 @@ const EventCard = props => {
   const numDay = date.getDate();
   const formatedDate = `${dayWeek}, ${month} ${numDay} `;
   return (
-    <div className="card__container">
-      <img className="card__image" src={eventImage} alt={eventName} />
+    <div
+      className="card__container"
+      style={{ backgroundImage: `url(${eventImage})` }}
+    >
       <p className="card__event-date">{formatedDate}</p>
       <h2 className="card__event-name">{eventName}</h2>
-      {/* <p className="card__event-place">{eventPlace}</p> */}
+      <p className="card__event-place">Madrid</p>
     </div>
   );
 };
