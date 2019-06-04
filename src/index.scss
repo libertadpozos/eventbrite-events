@@ -9,7 +9,13 @@
   text-decoration: none;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body{
   font-family: $font-primary;
-  @include flexContainer(flex, center, center, column);
+  margin: 0;
+  margin-bottom: 40px;
 }
