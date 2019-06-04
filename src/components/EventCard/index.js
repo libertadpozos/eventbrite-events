@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const EventCard = props => {
-  const { eventName, eventImage, eventDate } = props;
+  const { eventName, eventImage, eventDate, eventPlace } = props;
 
   const date = new Date(eventDate);
   const week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -44,7 +44,7 @@ EventCard.propTypes = {
   eventName: PropTypes.string.isRequired,
   eventImage: PropTypes.string.isRequired,
   eventDate: PropTypes.string.isRequired,
-  // eventPlace: PropTypes.string.isRequired,
+  eventPlace: PropTypes.string.isRequired,
 };
 
 export default EventCard;
