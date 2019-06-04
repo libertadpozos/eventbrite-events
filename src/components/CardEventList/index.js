@@ -11,7 +11,7 @@ const CardEventList = props => {
   return (
     <ul className="event-list__container">
       {data.map(event => {
-        let logo = '';
+        let logo;
         if (event.logo !== null) {
           logo = event.logo.url;
         } else {
