@@ -8,8 +8,9 @@ import api from '../../api/eb-api';
 class DetailEvent extends PureComponent {
   constructor(props) {
     super(props);
-    const { dataArr } = this.props;
-    const { id } = dataArr;
+    // eslint-disable-next-line react/prop-types
+    const { match } = this.props;
+    const { id } = match.params;
     this.state = {
       idEvent: id,
       maxPrice: {},
@@ -38,17 +39,22 @@ class DetailEvent extends PureComponent {
   render() {
     const { loading, dataArr } = this.props;
     const { maxPrice, minPrice } = this.state;
-
     return (
       <Fragment>
         {loading ? (
           <p>Loading</p>
         ) : (
-          <div>
-            <Link to="/">
-              <p>back</p>
+          <div className="detail">
+            <Link className="detail-arrow" to="/">
+              <div className="arrow-container">
+                <i className="fas fa-arrow-left" />
+              </div>
             </Link>
-            <img src={dataArr.logo.url} alt={dataArr.name.text} />
+            <img
+              className="detail-photo"
+              src={dataArr.logo.original.url}
+              alt={dataArr.name.text}
+            />
             <div className="event-detail__info-container">
               <p className="event-detail__date">Fecha</p>
               <h1 className="event-detail__title">{dataArr.name.text}</h1>
@@ -57,6 +63,7 @@ class DetailEvent extends PureComponent {
             <p className="event-detail__place">Place</p>
             <div
               className="event-detail__description"
+              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={this.createMarkup(
                 dataArr.description.html,
               )}
@@ -67,6 +74,9 @@ class DetailEvent extends PureComponent {
               minimunPrice={minPrice.major_value}
               maximunPrice={maxPrice.major_value}
             />
+            <p>
+              {maxPrice.major_value} {minPrice.major_value}
+            </p>
           </div>
         )}
       </Fragment>
