@@ -6,12 +6,12 @@
     flex-direction: column;
     text-align: left;
     box-shadow: 0 4px 12px 0 rgba(46, 55, 77, 0.16);
-    margin: 0;
-    height: 290px;
+    height: 280px;
     width: 272px;
+    margin-top: 24px;
+    margin-bottom: 0;
     @media all and (min-width: $desktop) {
         width: 100%;
-       
     }
 }
 
