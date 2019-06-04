@@ -34,7 +34,7 @@ const EventCard = props => {
       <div className="info__container">
         <p className="card__event-date">{formatedDate}</p>
         <h2 className="card__event-name">{eventName}</h2>
-        <p className="card__event-place">Madrid</p>
+        <p className="card__event-place">{`${eventPlace}, Madrid`}</p>
       </div>
     </div>
   );
