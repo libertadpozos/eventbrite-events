@@ -8,8 +8,9 @@ import api from '../../api/eb-api';
 class DetailEvent extends PureComponent {
   constructor(props) {
     super(props);
-    const { dataArr } = this.props;
-    const { id } = dataArr;
+    // eslint-disable-next-line react/prop-types
+    const { match } = this.props;
+    const { id } = match.params;
     this.state = {
       idEvent: id,
       maxPrice: {},
@@ -34,7 +35,6 @@ class DetailEvent extends PureComponent {
   render() {
     const { loading, dataArr } = this.props;
     const { maxPrice, minPrice } = this.state;
-
     return (
       <Fragment>
         {loading ? (
