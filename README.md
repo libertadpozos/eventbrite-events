@@ -57,7 +57,7 @@ This project is under the MIT License - see the file [LICENSE.md](LICENSE.md) fo
 _To all the [Eventbrite](https://www.eventbrite.com/) Spain team, for their valuable collaboration and willingness, especially to:_
 
 * **Stephanie Pi**
-* **Jean Yves Chanal** - [sevy07](https://github.com/sevy07)
+* **Jean Yves Chanal**
 * **Marta Valls**
 * **Emilio García**
 * **Diego Muñoz**
