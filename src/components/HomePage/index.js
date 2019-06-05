@@ -5,10 +5,12 @@ import './styles.scss';
 import Loading from '../Loading';
 
 const HomePage = props => {
-  const { dataArr, loading,moreResultsClick } = props;
+  const { dataArr, loading, moreResultsClick } = props;
 
-  let cardClasses = "card-list__section";
-  if(loading) {cardClasses += " hidden__card-list"};
+  let cardClasses = 'card-list__section';
+  if (loading) {
+    cardClasses += ' hidden__card-list';
+  }
   return (
     <div className="page__container">
       <div className="circle">
@@ -18,9 +20,9 @@ const HomePage = props => {
       <header className="page__header">
         <h1 className="page__title">Discover all the events around Madrid</h1>
       </header>
-      {loading && <p>Loading...</p>}
+      {loading && <Loading classLoading="loading__container" />}
       <section className={cardClasses}>
-        <CardEventList data={dataArr} moreResultsClick={moreResultsClick}/>
+        <CardEventList data={dataArr} moreResultsClick={moreResultsClick} />
       </section>
     </div>
   );
