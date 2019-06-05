@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import Purchase from '../Purchase/index';
+import Loading from '../Loading';
 import api from '../../api/eb-api';
 
 class DetailEvent extends PureComponent {
@@ -39,7 +40,7 @@ class DetailEvent extends PureComponent {
   render() {
     const { loading } = this.props;
     if (loading) {
-      return <p>loading</p>;
+      return <Loading classLoading="loading__container" />;
     }
 
     const { dataArr } = this.props;
@@ -84,6 +85,30 @@ class DetailEvent extends PureComponent {
                   <i className="fas fa-arrow-left" />
                 </div>
               </Link>
+              <div className="event-detail__info-container">
+                <p className="event-detail__date">{formatedDate}</p>
+                <h1 className="event-detail__title">{dataArr.name.text}</h1>
+                <p className="event-detail__calendar">Añadir al calendario</p>
+              </div>
+              <div className="event-detail__place">
+                {dataArr.venue.name !== null && (
+                  <span className="venue">{dataArr.venue.name} -</span>
+                )}
+                {dataArr.venue.address.address_1 !== null && (
+                  <span className="venue">
+                    {dataArr.venue.address.address_1},
+                  </span>
+                )}
+                {dataArr.venue.address.postal_code !== null && (
+                  <span className="venue">
+                    {dataArr.venue.address.postal_code},
+                  </span>
+                )}
+                {dataArr.venue.address.city !== null && (
+                  <span className="venue">{dataArr.venue.address.city}.</span>
+                )}
+              </div>
+
               <div className="event-detail__info-container">
                 <p className="event-detail__date">{formatedDate}</p>
                 <h1 className="event-detail__title">{dataArr.name.text}</h1>

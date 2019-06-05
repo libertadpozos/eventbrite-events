@@ -4,13 +4,7 @@
 .page {
     &__header{
         @include flexContainer(flex, flex-start, flex-start, column);
-        width: 272px;
-        margin: 24px 123px 0 24px;        
-        border-bottom: 1px solid $lightGrey;
-
-        @media all and (min-width: $tablet) {
-            width: 680px;
-        }
+            margin: 24px 123px 0 24px;        
     }
 
     &__title{
@@ -24,12 +18,14 @@
         @media all and (min-width: $tablet) {
             font-size: 56px;
             line-height: 72px;
-            width: unset;
+            width: 680px;
         }
     }
 }
 
 .card-list__section {
+    border-top: 1px solid $lightGrey;
+
     @media all and (min-width:$tablet) {
         display: flex;
         justify-content: flex-end;
@@ -43,7 +39,7 @@
     position: absolute;
     top: -10px;
     right: 0;
-    z-index: -10;
+    z-index: 0;
     @media all and (min-width: $tablet) {
         width: 680px;
         height: 350px;
