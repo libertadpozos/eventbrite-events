@@ -38,7 +38,12 @@ class DetailEvent extends PureComponent {
   };
 
   render() {
-    const { loading, dataArr } = this.props;
+    const { loading } = this.props;
+    if (loading) {
+      return <Loading classLoading="loading__container" />;
+    }
+
+    const { dataArr } = this.props;
     const { maxPrice, minPrice } = this.state;
     const date = new Date(dataArr.start.local);
     const week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -65,64 +70,84 @@ class DetailEvent extends PureComponent {
 
     return (
       <Fragment>
-        {loading ? (
-          <Loading classLoading="loading__container" />
-        ) : (
-          <div className="detail">
-            <div className="wrapper">
-              <div className="wrapper__image">
-                <img
-                  className="detail-photo"
-                  src={dataArr.logo.original.url}
-                  alt={dataArr.name.text}
-                />
-              </div>
-              <div className="wrapper__info">
-                <Link className="detail-arrow" to="/">
-                  <div className="arrow-container">
-                    <i className="fas fa-arrow-left" />
-                  </div>
-                </Link>
-                <div className="event-detail__info-container">
-                  <p className="event-detail__date">{formatedDate}</p>
-                  <h1 className="event-detail__title">{dataArr.name.text}</h1>
-                  <p className="event-detail__calendar">Añadir al calendario</p>
-                </div>
-                <div className="event-detail__place">
-                  {dataArr.venue.name !== null && (
-                    <span className="venue">{dataArr.venue.name} -</span>
-                  )}
-                  {dataArr.venue.address.address_1 !== null && (
-                    <span className="venue">
-                      {dataArr.venue.address.address_1},
-                    </span>
-                  )}
-                  {dataArr.venue.address.postal_code !== null && (
-                    <span className="venue">
-                      {dataArr.venue.address.postal_code},
-                    </span>
-                  )}
-                  {dataArr.venue.address.city !== null && (
-                    <span className="venue">{dataArr.venue.address.city}.</span>
-                  )}
-                </div>
-                <div
-                  className="event-detail__description"
-                  // eslint-disable-next-line react/no-danger
-                  dangerouslySetInnerHTML={this.createMarkup(
-                    dataArr.description.html,
-                  )}
-                />
-              </div>
+        <div className="detail">
+          <div className="wrapper">
+            <div className="wrapper__image">
+              <img
+                className="detail-photo"
+                src={dataArr.logo.original.url}
+                alt={dataArr.name.text}
+              />
             </div>
-            <Purchase
-              linkBuy={dataArr.url}
-              priceTicket={dataArr}
-              minimunPrice={minPrice.major_value}
-              maximunPrice={maxPrice.major_value}
-            />
+            <div className="wrapper__info">
+              <Link className="detail-arrow" to="/">
+                <div className="arrow-container">
+                  <i className="fas fa-arrow-left" />
+                </div>
+              </Link>
+              <div className="event-detail__info-container">
+                <p className="event-detail__date">{formatedDate}</p>
+                <h1 className="event-detail__title">{dataArr.name.text}</h1>
+                <p className="event-detail__calendar">Añadir al calendario</p>
+              </div>
+              <div className="event-detail__place">
+                {dataArr.venue.name !== null && (
+                  <span className="venue">{dataArr.venue.name} -</span>
+                )}
+                {dataArr.venue.address.address_1 !== null && (
+                  <span className="venue">
+                    {dataArr.venue.address.address_1},
+                  </span>
+                )}
+                {dataArr.venue.address.postal_code !== null && (
+                  <span className="venue">
+                    {dataArr.venue.address.postal_code},
+                  </span>
+                )}
+                {dataArr.venue.address.city !== null && (
+                  <span className="venue">{dataArr.venue.address.city}.</span>
+                )}
+              </div>
+
+              <div className="event-detail__info-container">
+                <p className="event-detail__date">{formatedDate}</p>
+                <h1 className="event-detail__title">{dataArr.name.text}</h1>
+                <p className="event-detail__calendar">Añadir al calendario</p>
+              </div>
+              <div className="event-detail__place">
+                {dataArr.venue.name !== null && (
+                  <span className="venue">{dataArr.venue.name} -</span>
+                )}
+                {dataArr.venue.address.address_1 !== null && (
+                  <span className="venue">
+                    {dataArr.venue.address.address_1},
+                  </span>
+                )}
+                {dataArr.venue.address.postal_code !== null && (
+                  <span className="venue">
+                    {dataArr.venue.address.postal_code},
+                  </span>
+                )}
+                {dataArr.venue.address.city !== null && (
+                  <span className="venue">{dataArr.venue.address.city}.</span>
+                )}
+              </div>
+              <div
+                className="event-detail__description"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={this.createMarkup(
+                  dataArr.description.html,
+                )}
+              />
+            </div>
           </div>
-        )}
+          <Purchase
+            linkBuy={dataArr.url}
+            priceTicket={dataArr}
+            minimunPrice={minPrice.major_value}
+            maximunPrice={maxPrice.major_value}
+          />
+        </div>
       </Fragment>
     );
   }
