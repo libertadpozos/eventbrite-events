@@ -17,12 +17,12 @@ const HomePage = props => {
       <header className="page__header">
         <h1 className="page__title">Discover all the events around Madrid</h1>
       </header>
-      {loading ? (
+      {loading && (
         <p>Loading...</p>
-      ) : ''}
-       <section className={cardClasses}>
-          <CardEventList data={dataArr} moreResultsClick={moreResultsClick}/>
-        </section>
+      )}
+      <section className={cardClasses}>
+        <CardEventList data={dataArr} moreResultsClick={moreResultsClick}/>
+      </section>
     </div>
   );
 };
