@@ -60,8 +60,8 @@ _To all the [Eventbrite](https://www.eventbrite.com/) Spain team, for their valu
 * **Jean Yves Chanal**
 * **Marta Valls**
 * **Emilio García**
-* **Diego Muñoz**
+* **Giuseppe Ciotta**
 * **Jorge Ferreiro**
 * **Jorge Barata**
 * **Mario Montes**
-* **Marisa**
+* **Marisa Marín**
