@@ -5,6 +5,9 @@ import './styles.scss';
 
 const HomePage = props => {
   const { dataArr, loading,moreResultsClick } = props;
+
+  let cardClasses = "card-list__section";
+  if(loading) {cardClasses += " hidden-card-list"};
   return (
     <div className="page__container">
       <div className="circle">
@@ -16,11 +19,10 @@ const HomePage = props => {
       </header>
       {loading ? (
         <p>Loading...</p>
-      ) : (
-        <section className="card-list__section">
+      ) : ''}
+       <section className={cardClasses}>
           <CardEventList data={dataArr} moreResultsClick={moreResultsClick}/>
         </section>
-      )}
     </div>
   );
 };
