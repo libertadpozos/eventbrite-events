@@ -40,7 +40,6 @@ class DetailEvent extends PureComponent {
     const { loading, dataArr } = this.props;
     const { maxPrice, minPrice } = this.state;
     const date = new Date(dataArr.start.local);
-    console.log(date);
     const week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const months = [
       'January',
