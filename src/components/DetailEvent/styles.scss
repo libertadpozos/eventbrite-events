@@ -16,16 +16,23 @@
   left: 24px;
   top: 24px;
   z-index: 5;
+  @media all and (min-width: $tablet) {
+    position: static;
+    background-color: transparent;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 }
 .detail-arrow {
   text-decoration: none;
   color: $whiteGhost;
+  font-size: 30px;
 }
 .detail-photo {
   width: 100%;
   object-fit: contain;
   object-position: center;
-  position:relative;
+  position: relative;
   z-index: 0;
 }
 
@@ -37,90 +44,118 @@
     color: #4b4d63;
   }
   .detail-photo {
+    height: 425px;
+    object-position: top left;
+    object-fit: cover;
     box-shadow: 25px 20px 0px 0px ($darkBlue);
-    object-position: top;
-    max-width: 35vw;
   }
 }
 .event-detail {
-    &__info-container{
-        width: 272px;
-        padding: 24px;
-        background-color: $freeSalmon;
-        color: $whiteGhost;
-        text-align: left;
-        position: absolute;
-        left:50%;
-        right:50%;
-        transform: translate(-50%, -30%);
+  &__info-container {
+    padding: 24px;
+    background-color: $freeSalmon;
+    color: $whiteGhost;
+    text-align: left;
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
 
-        @media all and (min-width: $tablet) {
-            width: 600px;
-            padding: 24px 0 0 24px;
-            background-color: $whiteGhost;
-            color: $darkBlue;
-            position:relative;
-        }      
+    @media all and (min-width: $tablet) {
+      padding: 0;
+      margin-top: 0;
+      background-color: transparent;
+      color: $darkBlue;
+      position: relative;
     }
+  }
+
+  &__date {
+    font-size: 14px;
+    @media all and (min-width: $tablet) {
+      color: $mediumGrey;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 24px 0;
+
+    @media all and (min-width: $tablet) {
+      font-size: 56px;
+    }
+  }
+
+  &__calendar {
+    font-size: 16px;
+    text-decoration: underline;
+
+    @media all and (min-width: $tablet) {
+      color: $whiteGhost;
+      text-decoration: none;
+      font-weight: 600;
+      position: fixed;
+      bottom: 40px;
+      z-index: 9;
+      display: none;
+    }
+  }
+
+  &__place {
+    font-size: 14px;
+    color: $blueKing;
+    text-align: left;
+    padding: 24px 0 24px;
+    border-bottom: 1px solid $lightGrey;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $blueSea;
+    text-align: left;
+    margin: 24px 0 40px;
+    padding-bottom: 60px; 
     
-    &__date {
-        font-size: 14px;
+    @media all and (min-width: $tablet) {
+      width: 600px;
     }
 
-    &__title {
-        font-size: 32px;
-        font-weight: 900;
-        margin: 24px 0;
-
-        @media all and (min-width: $tablet) {
-            font-size: 56px;
-        }
+    p {
+      margin-bottom: 20px;
     }
-
-    &__calendar {
-        font-size: 16px;
-        text-decoration: underline;
-
-        @media all and (min-width: $tablet) {
-            color: $whiteGhost;
-            text-decoration: none;
-            font-weight: 600;
-            position: fixed;
-            bottom: 40px;
-            z-index: 9;
-        }
+    hr {
+      margin-bottom: 10px;
     }
-
-    &__place {
-        font-size: 14px;
-        color: $blueKing;
-        text-align: left;
-        padding: 0 0 24px 24px;
-        border-bottom: 1px solid $lightGrey;
+    img {
+      max-width: 100%;
     }
-
-    &__description{
-        display: block;
-        width: 272px;
-        height: 100%;
-        font-family: $font-primary;
-        font-size: 16px;
-        line-height: 1.5;
-        color: $blueSea;
-        text-align: left;
-        padding: 0 48px;
-        margin-bottom: 40px;
-    
-        @media all and (min-width: $tablet) {
-            width: 600px; 
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        a {
-            color: $mediumOrange;
-        }
+    a {
+      color: $mediumOrange;
     }
+  }
+}
+.wrapper {
+  @media all and (min-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px 80px 0 80px;
+  }
+  &__info {
+    padding: 0 24px;
+    @media all and (min-width: $tablet) {
+      flex: 1;
+      order: 0;
+      padding: 0 24px 0 0;
+
+    }
+  }
+  &__image {
+    @media all and (min-width: $tablet) {
+      min-width: 40%;
+      flex: 0;
+      order: 1;
+    }
+  }
 }

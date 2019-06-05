@@ -14,14 +14,14 @@
     ::after{
         content: "";
         width: 100%;
-        height: 30%;
+        height: 100px;
         display: block;
         position: fixed; 
         bottom: 100px;
         left: 0;
         background-size: 100%;
         background: linear-gradient(top,$coolGradient 0,$whiteGhost 100%);
-      }
+    }
 
     @media all and (min-width: $tablet) {
         @include flexContainer(flex, flex-end, center, row);
