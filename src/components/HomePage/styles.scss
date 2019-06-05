@@ -1,99 +1,99 @@
-@import "../../scss/mixins.scss";
-@import "../../scss/variables.scss";
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
 
 .page {
-    &__header{
-        @include flexContainer(flex, flex-start, flex-start, column);
-        width: 272px;
-        margin: 24px 123px 0 24px;        
-        border-bottom: 1px solid $lightGrey;
+  &__header {
+    @include flexContainer(flex, flex-start, flex-start, column);
+    width: 272px;
+    margin: 24px 123px 0 24px;
+    border-bottom: 1px solid $lightGrey;
 
-        @media all and (min-width: $tablet) {
-            width: 680px;
-        }
+    @media all and (min-width: $tablet) {
+      width: 680px;
     }
+  }
 
-    &__title{
-        width: 173px;
-        padding-bottom: 24px;
-        font-size: 32px;
-        color: $darkBlue;
-        text-align: left;
-        line-height: 45px;
+  &__title {
+    width: 173px;
+    padding-bottom: 24px;
+    font-size: 32px;
+    color: $darkBlue;
+    text-align: left;
+    line-height: 45px;
 
-        @media all and (min-width: $tablet) {
-            font-size: 56px;
-            line-height: 72px;
-            width: unset;
-        }
+    @media all and (min-width: $tablet) {
+      font-size: 56px;
+      line-height: 72px;
+      width: unset;
     }
+  }
 }
 
 .card-list__section {
-    @media all and (min-width:$tablet) {
-        display: flex;
-        justify-content: flex-end;
-    }
+  @media all and (min-width: $tablet) {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .circle {
-    width: 104px;
-    height: 261px;
-    overflow: hidden;
-    position: absolute;
-    top: -10px;
-    right: 0;
-    z-index: -10;
+  width: 104px;
+  height: 261px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  right: 0;
+  z-index: -10;
+  @media all and (min-width: $tablet) {
+    width: 680px;
+    height: 350px;
+    top: auto;
+    bottom: 0;
+    left: -153px;
+  }
+  @media all and (min-width: $desktop) {
+    width: 937px;
+    height: 488px;
+    top: auto;
+    bottom: 0;
+    left: -237px;
+  }
+  &--back {
+    height: 176px;
+    width: 176px;
+    border-radius: 50%;
+    background-image: url(../../img/mapa.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     @media all and (min-width: $tablet) {
-        width: 680px;
-        height: 350px;
-        top: auto;
-        bottom: 0;
-        left: -153px;
+      height: 479px;
+      width: 479px;
     }
     @media all and (min-width: $desktop) {
-        width: 937px;
-        height: 488px;
-        top: auto;
-        bottom: 0;
-        left: -237px;
+      height: 679px;
+      width: 679px;
     }
-    &--back {
-        height: 176px;
-        width: 176px;
-        border-radius: 50%;
-        background-image: url(../../img/mapa.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        @media all and (min-width: $tablet) {
-            height: 479px;
-            width: 479px;
-        }
-        @media all and (min-width: $desktop) {
-            height: 679px;
-            width: 679px;
-        }
+  }
+  &--front {
+    height: 184px;
+    width: 184px;
+    border-radius: 50%;
+    background-color: $freeSalmon;
+    position: absolute;
+    top: 77px;
+    left: 51px;
+    @media all and (min-width: $tablet) {
+      height: 612px;
+      width: 612px;
+      top: 225px;
+      left: 115px;
     }
-    &--front {
-        height: 184px;
-        width: 184px;
-        border-radius: 50%;
-        background-color: $freeSalmon;
-        position: absolute;
-        top: 77px;
-        left: 51px;
-        @media all and (min-width: $tablet) {
-            height: 612px;
-            width: 612px;
-            top: 225px;
-            left: 115px;
-        }
-        @media all and (min-width: $desktop) {
-            height: 812px;
-            width: 812px;
-            top: 310px;
-            left: 193px;
-        }
+    @media all and (min-width: $desktop) {
+      height: 812px;
+      width: 812px;
+      top: 310px;
+      left: 193px;
     }
+  }
 }
