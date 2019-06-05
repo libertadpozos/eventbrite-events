@@ -1,36 +1,36 @@
-@import "../../scss/mixins.scss";
-@import "../../scss/variables.scss";
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
 
-.event-list__container{
-    @include flexContainer(flex, center, center, column);
-    @media all and (min-width: $tablet) {
-        @include mainListMargin;
-        height: 55vh;
-        overflow-y: scroll;
-        margin-bottom: 0;
-        margin-top: 40px;
-        justify-content: flex-start;
-    }
-    @media all and (min-width:$desktop) {
-        display: grid;
-        grid-template-columns: 328px 328px;
-        grid-template-rows: 1fr 1fr;
-        grid-column-gap: 22px;
-        grid-row-gap: 30px;
-        height: 430px;
-        @include mainListMargin;
-        overflow-y: scroll;
-        margin-bottom: 0;
-    }
+.event-list__container {
+  @include flexContainer(flex, center, center, column);
+  @media all and (min-width: $tablet) {
+    @include mainListMargin;
+    height: 55vh;
+    overflow-y: scroll;
+    margin-bottom: 0;
+    margin-top: 40px;
+    justify-content: flex-start;
+  }
+  @media all and (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 328px 328px;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 22px;
+    grid-row-gap: 30px;
+    height: 430px;
+    @include mainListMargin;
+    overflow-y: scroll;
+    margin-bottom: 0;
+  }
 }
 
 .results-btn {
-    width: 272px;
-    background-color:$mediumOrange;
-    border: none;
-    border-radius: 4px;
-    margin-bottom: 74px;
-    padding: 12px;
-    color: $whiteGhost;
-    font-size: 14px;
+  width: 272px;
+  background-color: $mediumOrange;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 74px;
+  padding: 12px;
+  color: $whiteGhost;
+  font-size: 14px;
 }

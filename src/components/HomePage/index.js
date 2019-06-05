@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CardEventList from '../CardEventList';
 import './styles.scss';
+import Loading from '../Loading';
 
 const HomePage = props => {
   const { dataArr, loading,moreResultsClick } = props;
@@ -17,9 +18,7 @@ const HomePage = props => {
       <header className="page__header">
         <h1 className="page__title">Discover all the events around Madrid</h1>
       </header>
-      {loading && (
-        <p>Loading...</p>
-      )}
+      {loading && <p>Loading...</p>}
       <section className={cardClasses}>
         <CardEventList data={dataArr} moreResultsClick={moreResultsClick}/>
       </section>
@@ -30,6 +29,7 @@ const HomePage = props => {
 HomePage.propTypes = {
   dataArr: PropTypes.arrayOf(PropTypes.object).isRequired,
   loading: PropTypes.bool.isRequired,
+  moreResultsClick: PropTypes.func.isRequired,
 };
 
 export default HomePage;
