@@ -64,7 +64,24 @@ class DetailEvent extends PureComponent {
                   <h1 className="event-detail__title">{dataArr.name.text}</h1>
                   <p className="event-detail__calendar">Añadir al calendario</p>
                 </div>
-                <p className="event-detail__place">Place</p>
+                <div className="event-detail__place">
+                  {dataArr.venue.name !== null && (
+                    <span className="venue">{dataArr.venue.name} -</span>
+                  )}
+                  {dataArr.venue.address.address_1 !== null && (
+                    <span className="venue">
+                      {dataArr.venue.address.address_1},
+                    </span>
+                  )}
+                  {dataArr.venue.address.postal_code !== null && (
+                    <span className="venue">
+                      {dataArr.venue.address.postal_code},
+                    </span>
+                  )}
+                  {dataArr.venue.address.city !== null && (
+                    <span className="venue">{dataArr.venue.address.city}.</span>
+                  )}
+                </div>
                 <div
                   className="event-detail__description"
                   // eslint-disable-next-line react/no-danger
