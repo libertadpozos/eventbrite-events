@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CardEventList from '../CardEventList';
 import './styles.scss';
+import Loading from '../Loading';
 
 const HomePage = props => {
   const { dataArr, loading, moreResultsClick } = props;

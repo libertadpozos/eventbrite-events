@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
+import Loading from '../Loading';
 
 const EventCard = props => {
   const { eventName, eventImage, eventDate, eventPlace } = props;
@@ -37,6 +38,7 @@ const EventCard = props => {
         <h2 className="card__event-name">{eventName}</h2>
         <p className="card__event-place">{`${eventPlace}, Madrid`}</p>
       </div>
+      <Loading />
     </div>
   );
 };
