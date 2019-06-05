@@ -14,7 +14,7 @@ _These instructions will allow you to obtain a copy of the project on your local
 
 3. To launch the project and see it in the browser: npm start
 
-4. To add and upload the changes you make: git add . / git commit -m 'message' / git push origin 'name-of-the-branch'
+4. To add and upload the changes you make: `git add .` / `git commit -m 'message'` / `git push origin 'name-of-the-branch'`
 
 ### Requirements 📋
 
@@ -22,7 +22,7 @@ _To use the application you must have the following:_
 
 1. An API key, which you can obtain through the following [link](https://www.eventbrite.com/platform/)
 
-2. In the root of the project, you must create an .env file, in which, you must write the following:
+2. In the root of the project, you must create an `.env` file, in which, you must write the following:
 ```
 REACT_APP_API_KEY = put-here-your-API-key
 ```
@@ -31,7 +31,7 @@ REACT_APP_API_KEY = put-here-your-API-key
 
 ## Built with 🛠️
 
-_This project is created with[Create React App](https://github.com/facebook/create-react-app)._
+_This project is created with [Create React App](https://github.com/facebook/create-react-app)._
 >- You can learn more in [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 >- To learn React, take a look at the [React's documentation](https://reactjs.org/).
 
