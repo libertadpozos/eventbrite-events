@@ -45,37 +45,41 @@ class DetailEvent extends PureComponent {
           <p>Loading</p>
         ) : (
           <div className="detail">
-            <Link className="detail-arrow" to="/">
-              <div className="arrow-container">
-                <i className="fas fa-arrow-left" />
+            <div className="wrapper">
+              <div className="wrapper__image">
+                <img
+                  className="detail-photo"
+                  src={dataArr.logo.original.url}
+                  alt={dataArr.name.text}
+                />
               </div>
-            </Link>
-            <img
-              className="detail-photo"
-              src={dataArr.logo.original.url}
-              alt={dataArr.name.text}
-            />
-            <div className="event-detail__info-container">
-              <p className="event-detail__date">Fecha</p>
-              <h1 className="event-detail__title">{dataArr.name.text}</h1>
-              <p className="event-detail__calendar">Añadir al calendario</p>
+              <div className="wrapper__info">
+                <Link className="detail-arrow" to="/">
+                  <div className="arrow-container">
+                    <i className="fas fa-arrow-left" />
+                  </div>
+                </Link>
+                <div className="event-detail__info-container">
+                  <p className="event-detail__date">Fecha</p>
+                  <h1 className="event-detail__title">{dataArr.name.text}</h1>
+                  <p className="event-detail__calendar">Añadir al calendario</p>
+                </div>
+                <p className="event-detail__place">Place</p>
+                <div
+                  className="event-detail__description"
+                  // eslint-disable-next-line react/no-danger
+                  dangerouslySetInnerHTML={this.createMarkup(
+                    dataArr.description.html,
+                  )}
+                />
+              </div>
             </div>
-            <p className="event-detail__place">Place</p>
-            <div
-              className="event-detail__description"
-              dangerouslySetInnerHTML={this.createMarkup(
-                dataArr.description.html,
-              )}
-            />
             <Purchase
               linkBuy={dataArr.url}
               priceTicket={dataArr}
               minimunPrice={minPrice.major_value}
               maximunPrice={maxPrice.major_value}
             />
-            <p>
-              {maxPrice.major_value} {minPrice.major_value}
-            </p>
           </div>
         )}
       </Fragment>

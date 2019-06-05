@@ -31,6 +31,9 @@
     line-height: 22px;
     letter-spacing: 0.5px;
     color: $darkBlue;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     &:hover {
         color: $blueKing;
     }
@@ -52,6 +55,7 @@
 }
 
 .info__container {
+    background-color: $whiteGhost;
     padding-left:  24px;
     padding-right: 24px;
     height: 50%;

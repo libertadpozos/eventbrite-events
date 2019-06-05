@@ -10,6 +10,9 @@ const getPrice = (min, max) => {
     }
     return `${min}€`;
   }
+  if (min === '0.00') {
+    return `Free - ${max}€`;
+  }
   return `${min}€ - ${max}€`;
 };
 

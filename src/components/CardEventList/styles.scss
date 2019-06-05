@@ -2,16 +2,14 @@
 @import "../../scss/variables.scss";
 
 .event-list__container{
-
     @include flexContainer(flex, center, center, column);
     @media all and (min-width: $tablet) {
-    @include mainListMargin;
-        height: 60vh;
+        @include mainListMargin;
+        height: 56vh;
         overflow-y: scroll;
         margin-bottom: 40px;
         margin-top: 40px;
         justify-content: flex-start;
-
     }
     @media all and (min-width:$desktop) {
         display: grid;
@@ -19,8 +17,9 @@
         grid-template-rows: 1fr 1fr;
         grid-column-gap: 22px;
         grid-row-gap: 30px;
-        height: 582px;
+        height: 430px;
         @include mainListMargin;
         overflow-y: scroll;
+        margin-bottom: 0;
     }
 }
