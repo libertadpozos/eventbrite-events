@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import Purchase from '../Purchase/index';
+import Loading from '../Loading';
 import api from '../../api/eb-api';
 
 class DetailEvent extends PureComponent {
@@ -42,7 +43,7 @@ class DetailEvent extends PureComponent {
     return (
       <Fragment>
         {loading ? (
-          <p>Loading</p>
+          <Loading classLoading="loading__container" />
         ) : (
           <div className="detail">
             <div className="wrapper">
