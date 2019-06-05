@@ -4,16 +4,13 @@
 .page {
     &__header{
         @include flexContainer(flex, flex-start, flex-start, column);
-        width: 100%;
-        margin: 24px 123px 0 24px;        
-        border-bottom: 1px solid $lightGrey;
+            width: 100%;
+            margin: 24px 123px 0 24px;        
+            border-bottom: 1px solid $lightGrey;
+            z-index: -1;
 
         @media all and (min-width: $tablet) {
-            max-width: 1200px;
-        }
-
-        @media all and (min-width: $desktop) {
-            min-width: 1200px;
+            width: unset;
         }
     }
 
@@ -47,7 +44,7 @@
     position: absolute;
     top: -10px;
     right: 0;
-    z-index: -10;
+    z-index: 0;
     @media all and (min-width: $tablet) {
         width: 680px;
         height: 350px;
