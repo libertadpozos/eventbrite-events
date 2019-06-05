@@ -7,7 +7,7 @@ const HomePage = props => {
   const { dataArr, loading,moreResultsClick } = props;
 
   let cardClasses = "card-list__section";
-  if(loading) {cardClasses += " hidden-card-list"};
+  if(loading) {cardClasses += " hidden__card-list"};
   return (
     <div className="page__container">
       <div className="circle">
