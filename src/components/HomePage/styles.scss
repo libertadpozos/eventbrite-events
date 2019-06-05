@@ -8,7 +8,7 @@
   }
 
   &__title {
-    width: 173px;
+    max-width: 173px;
     padding-bottom: 24px;
     font-size: 32px;
     color: $darkBlue;
@@ -18,7 +18,7 @@
     @media all and (min-width: $tablet) {
       font-size: 56px;
       line-height: 72px;
-      width: unset;
+      max-width: 680px;
     }
   }
 }
