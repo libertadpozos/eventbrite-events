@@ -5,7 +5,7 @@
     @include flexContainer(flex, center, center, column);
     @media all and (min-width: $tablet) {
         @include mainListMargin;
-        height: 300px;
+        height: 70vh;;
         overflow-y: scroll;
         margin-bottom: 0;
         margin-top: 40px;
@@ -26,10 +26,13 @@
 
 .results-btn {
     width: 272px;
-    height: 44px;
+    // height: 44px;
     // margin-top: 32px;
     background-color:$mediumOrange;
     border: none;
-    // margin-bottom: 74px;
+    border-radius: 4px;
+    margin-bottom: 74px;
+    padding: 12px;
     color: $whiteGhost;
+    font-size: 14px;
 }
