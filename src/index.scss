@@ -1,5 +1,8 @@
+
 @import './scss/variables.scss';
 @import './scss/mixins.scss';
+
+
 
 *, *::before, *::after {
   margin: 0;
@@ -9,7 +12,7 @@
   text-decoration: none;
 }
 
-body{
+body {
   font-family: $font-primary;
-  @include flexContainer(flex, center, center, column);
 }
+
