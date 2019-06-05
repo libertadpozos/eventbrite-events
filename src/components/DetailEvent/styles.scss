@@ -19,12 +19,14 @@
   @media all and (min-width: $tablet) {
     position: static;
     background-color: transparent;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 .detail-arrow {
   text-decoration: none;
   color: $whiteGhost;
-  
+  font-size: 30px;
 }
 .detail-photo {
   width: 100%;
@@ -42,9 +44,10 @@
     color: #4b4d63;
   }
   .detail-photo {
+    height: 425px;
+    object-position: top left;
+    object-fit: cover;
     box-shadow: 25px 20px 0px 0px ($darkBlue);
-    object-position: top;
-    max-width: 35vw;
   }
 }
 .event-detail {
@@ -68,6 +71,9 @@
 
   &__date {
     font-size: 14px;
+    @media all and (min-width: $tablet) {
+      color: $mediumGrey;
+    }
   }
 
   &__title {
@@ -99,26 +105,30 @@
     font-size: 14px;
     color: $blueKing;
     text-align: left;
-    padding: 0 0 24px 24px;
+    padding: 24px 0 24px;
     border-bottom: 1px solid $lightGrey;
   }
 
   &__description {
-    display: block;
     font-size: 16px;
     line-height: 1.5;
     color: $blueSea;
     text-align: left;
-    margin-bottom: 40px;
-
+    margin: 24px 0 40px;
+    
     @media all and (min-width: $tablet) {
       width: 600px;
     }
 
+    p {
+      margin-bottom: 20px;
+    }
+    hr {
+      margin-bottom: 10px;
+    }
     img {
       max-width: 100%;
     }
-
     a {
       color: $mediumOrange;
     }
@@ -134,7 +144,6 @@
   &__info {
     padding: 0 24px;
     @media all and (min-width: $tablet) {
-      // background-color: blue;
       flex: 1;
       order: 0;
       padding: 0 24px 0 0;
@@ -143,7 +152,6 @@
   }
   &__image {
     @media all and (min-width: $tablet) {
-      // background-color: red;
       min-width: 40%;
       flex: 0;
       order: 1;
