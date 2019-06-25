@@ -42,15 +42,11 @@ _We use [Node 10.16.0 & npm 6.9.0](https://nodejs.org/es/download/)_
 
 ## Authors ✒️
 
-* **Irene Fuente** - [ifuenteromero](https://github.com/ifuenteromero)
-* **Irene Gómez** - [irenegf83](https://github.com/irenegf83)
-* **Libertad Pozos** - [libertadpozos](https://github.com/libertadpozos)
-* **Saray Fernández** - [sarayfg](https://github.com/sarayfg)
-* **Clarette Terrasi Díaz** - [cterrasid](https://github.com/cterrasid)
-
-## License 📄
-
-This project is under the MIT License - see the file [LICENSE.md](LICENSE.md) for details
+* **Irene Fuente** - [ifuenteromero](https://www.linkedin.com/in/ifuenteromero)
+* **Irene Gómez** - [irene-gomez](https://www.linkedin.com/in/irenegf)
+* **Libertad Pozos** - [libertadpozos](https://www.linkedin.com/in/libertadpozos)
+* **Saray Fernández** - [sarayfg](https://www.linkedin.com/in/sarayfernandezgarcia)
+* **Clarette Terrasi Díaz** - [cterrasid](https://www.linkedin.com/in/claretteterrasidiaz/)
 
 ## Our gratitude 🎁
 
