@@ -37,9 +37,8 @@ class App extends PureComponent {
           return {
             events: [...oldEvents, ...newEvents],
             isFetching: false,
-          }
-        }
-        ),
+          };
+        }),
       );
   };
 
@@ -48,14 +47,14 @@ class App extends PureComponent {
     return events.find(event => event.id === id);
   }
 
-  handleMoreResultsClick(event) {
+  handleMoreResultsClick() {
     const { currentPage } = this.state;
     const nextCurrentPage = currentPage + 1;
 
     this.setState({
       currentPage: nextCurrentPage,
       isFetching: true,
-    })
+    });
     this.getEvents(nextCurrentPage);
   }
 
@@ -68,7 +67,13 @@ class App extends PureComponent {
           <Route
             exact
             path="/"
-            render={() => <HomePage dataArr={events} loading={isFetching} moreResultsClick={this.handleMoreResultsClick} />}
+            render={() => (
+              <HomePage
+                dataArr={events}
+                loading={isFetching}
+                moreResultsClick={this.handleMoreResultsClick}
+              />
+            )}
           />
           <Route
             path="/detail/:id"
@@ -81,7 +86,7 @@ class App extends PureComponent {
             )}
           />
         </Switch>
-      </div >
+      </div>
     );
   }
 }

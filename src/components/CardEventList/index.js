@@ -1,11 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import EventCard from '../EventCard';
 import './styles.scss';
 
 const CardEventList = props => {
-  const { data, moreResultsClick} = props;
+  // eslint-disable-next-line react/prop-types
+  const { data, moreResultsClick } = props;
   const defaultImage =
     'https://www.eventbrite.es/static/images/search/placeholder3.png';
   return (
@@ -30,13 +31,9 @@ const CardEventList = props => {
           </li>
         );
       })}
-       <button
-          type="button"
-          className="results-btn"
-          onClick={moreResultsClick}
-        >
-          More results
-        </button>
+      <button type="button" className="results-btn" onClick={moreResultsClick}>
+        More results
+      </button>
     </ul>
   );
 };
